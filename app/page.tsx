@@ -103,8 +103,8 @@ export default function ContentGenerator() {
 
   const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
-  // Rate limiting delay between requests (1000ms)
-  const RATE_LIMIT_DELAY = 1000
+  // Rate limiting delay between requests (2000ms)
+  const RATE_LIMIT_DELAY = 2000
 
   // Update the processData function
   const processData = (json: DoctorData[]) => {
@@ -304,6 +304,75 @@ export default function ContentGenerator() {
     }
   }
 
+  const handleRetryEntry = async (entryId: number) => {
+    if (!jsonData) return
+
+    try {
+      const entry = jsonData.rawData[entryId]
+
+      // Update the status to pending
+      setGeneratedContents((prev) => {
+        const newContents = [...prev]
+        newContents[entryId] = {
+          ...newContents[entryId],
+          status: "pending",
+        }
+        return newContents
+      })
+
+      const response = await fetch("/api/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          selectedData: entry,
+          selectedHeaders,
+          tone: tone === "custom" ? customTone : tone,
+          wordCount: Number.parseInt(characterLength),
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+
+      const data = await response.json()
+
+      if (data.error) {
+        throw new Error(data.error)
+      }
+
+      setGeneratedContents((prev) => {
+        const newContents = [...prev]
+        newContents[entryId] = {
+          id: entryId,
+          content: data.content || "",
+          keywords: [],
+          status: "completed",
+          metaTitle: data.metaTitle || "",
+          metaDescription: data.metaDescription || "",
+          slug: data.slug || "",
+          focusKeyword: data.focusKeyword || "",
+        }
+        return newContents
+      })
+    } catch (error) {
+      console.error("Error retrying entry:", entryId, error)
+
+      setGeneratedContents((prev) => {
+        const newContents = [...prev]
+        newContents[entryId] = {
+          id: entryId,
+          content: "",
+          keywords: [],
+          status: "failed",
+        }
+        return newContents
+      })
+    }
+  }
+
   const tones = ["Professional", "Casual", "Friendly", "Formal", "Informative", "Persuasive", "Custom"]
 
   const loadMoreEntries = () => {
@@ -483,9 +552,13 @@ export default function ContentGenerator() {
                         <TableRow key={item.id}>
                           <TableCell>{item.id + 1}</TableCell>
                           <TableCell>
-                            {item.status === "pending" && <Badge variant="secondary">Pending</Badge>}
-                            {item.status === "completed" && <Badge variant="success">Completed</Badge>}
-                            {item.status === "failed" && <Badge variant="destructive">Failed</Badge>}
+                            {item.status === "pending" && (
+                              <Badge className="bg-yellow-500 hover:bg-yellow-600">Pending</Badge>
+                            )}
+                            {item.status === "completed" && (
+                              <Badge className="bg-green-500 hover:bg-green-600">Completed</Badge>
+                            )}
+                            {item.status === "failed" && <Badge className="bg-red-500 hover:bg-red-600">Failed</Badge>}
                           </TableCell>
                           <TableCell className="max-w-[200px]">
                             {item.status === "completed" ? (
@@ -506,6 +579,16 @@ export default function ContentGenerator() {
                                 slug={item.slug}
                                 focusKeyword={item.focusKeyword}
                               />
+                            )}
+                            {item.status === "failed" && (
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={() => handleRetryEntry(item.id)}
+                                className="text-red-500 hover:text-red-700"
+                              >
+                                Retry Generation
+                              </Button>
                             )}
                           </TableCell>
                         </TableRow>

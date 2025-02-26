@@ -9,10 +9,7 @@ const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    optimizeFonts: true,
-    optimizeImages: true,
-  },
+  // Remove experimental section as these options are no longer needed
   images: {
     remotePatterns: [
       {
