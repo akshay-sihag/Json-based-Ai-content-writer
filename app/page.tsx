@@ -146,9 +146,10 @@ export default function ContentGenerator() {
     try {
       while (currentStartIndex < totalEntries && processingRef.current) {
         const batchEnd = Math.min(currentStartIndex + batchSizeNum, totalEntries)
-        const batch = jsonData.rawData.slice(currentStartIndex, batchEnd)
+        const batch: DoctorData[] = jsonData.rawData.slice(currentStartIndex, batchEnd)
 
-        for (const [index, entry] of batch.entries()) {
+        for (let index = 0; index < batch.length; index++) {
+          const entry = batch[index];
           if (!processingRef.current) {
             console.log("Processing stopped")
             lastProcessedRef.current = currentStartIndex + index
