@@ -104,7 +104,7 @@ export default function ContentGenerator() {
   const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
   // Rate limiting delay between requests (2000ms)
-  const RATE_LIMIT_DELAY = 2000
+  const RATE_LIMIT_DELAY = 4000
 
   // Update the processData function
   const processData = (json: DoctorData[]) => {
