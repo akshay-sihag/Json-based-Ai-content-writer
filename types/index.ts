@@ -1,15 +1,15 @@
 export interface DoctorData {
-  name: string
+  name?: string
   Name?: string
   DOCTOR_NAME?: string
   specialty?: string
   Specialty?: string
   SPECIALTY?: string
-  qualifications: string
-  mainSpecialty: string
-  subSpecialties: string
+  qualifications?: string
+  mainSpecialty?: string
+  subSpecialties?: string
   location?: string
-  about: string
+  about?: string
   [key: string]: string | undefined
 }
 

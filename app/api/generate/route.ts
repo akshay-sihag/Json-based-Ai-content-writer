@@ -277,17 +277,30 @@ function linkKeywords(text: string, keywords: Array<{ keyword: string; url: stri
 
 interface DoctorData {
   name: string
+  Name?: string
+  DOCTOR_NAME?: string
+  specialty?: string
+  Specialty?: string
+  SPECIALTY?: string
   mainSpecialty: string
+  subSpecialties: string
   qualifications: string
-  about: string
+  location?: string
+  about?: string
+  [key: string]: string | undefined
 }
 
 function enforceBoldCaps(text: string, selectedData: DoctorData) {
+  // Fix: Add null check for selectedData.about before calling match()
+  const aboutMatches = selectedData.about
+    ? selectedData.about.match(/MB.,ChB.,$$\d{4}$$|MMed$$O\/G$$.,$$\d{4}$$/g) || []
+    : []
+
   const allowedTerms = [
     selectedData.name,
     selectedData.mainSpecialty,
     selectedData.qualifications,
-    ...(selectedData.about.match(/MB.,ChB.,$$\d{4}$$|MMed$$O\/G$$.,$$\d{4}$$/g) || []),
+    ...aboutMatches,
     "Maternal and Child Health",
     "Reproductive Health",
     "NHIF",
@@ -302,6 +315,7 @@ function enforceBoldCaps(text: string, selectedData: DoctorData) {
     "family planning",
     "cervical screening",
   ].filter(Boolean)
+
   const boldCounts = new Map<string, number>()
   return text.replace(/<strong>(.*?)<\/strong>/gi, (match, content) => {
     const exactMatch = allowedTerms.find((term) => term === content)
@@ -322,18 +336,30 @@ export async function POST(req: Request) {
 
     const doctorName = selectedData.name || selectedData.Name || selectedData.DOCTOR_NAME || "the doctor"
     const mainSpecialty = selectedData.specialty || selectedData.Specialty || selectedData.SPECIALTY || "Medical"
-    const contentContext = selectedHeaders.map((header: string) => `${header}: ${selectedData[header]}`).join("\n")
+
+    // Add null check for selectedData fields
+    const about = selectedData.about || "Not provided"
+    const qualifications = selectedData.qualifications || "Not provided"
+    const subSpecialties = selectedData.subSpecialties || "Not provided"
+    const location = selectedData.location || "Not specified"
+
+    const contentContext = selectedHeaders
+      .map((header: string) => {
+        // Add null check for selectedData[header]
+        return `${header}: ${selectedData[header] || "Not provided"}`
+      })
+      .join("\n")
 
     const prompt = `
 You are a professional medical content writer. Create SEO-optimized content about ${doctorName} based STRICTLY on the following data. Do not fabricate details beyond logical extensions of specialties explicitly tied to the data. Use only the provided data and context below.
 
 Doctor Data:
 - Name: ${selectedData.name}
-- Qualifications: ${selectedData.qualifications}
+- Qualifications: ${qualifications}
 - Main Specialty: ${selectedData.mainSpecialty}
-- Subspecialties: ${selectedData.subSpecialties}
-- Location: ${selectedData.location || "Not specified"}
-- About: ${selectedData.about}
+- Subspecialties: ${subSpecialties}
+- Location: ${location}
+- About: ${about}
 
 Additional Context:
 ${contentContext}
@@ -344,13 +370,13 @@ STRICT Requirements:
 
 KEYWORD FREQUENCY AND HIGHLIGHTING:
 1. Keyword Usage:
-   - Limit each key term (e.g., "${selectedData.mainSpecialty}", "NHIF") to 4-5 uses max in the text, strictly enforced.
-   - Spread naturally; no stuffing.
+ - Limit each key term (e.g., "${selectedData.mainSpecialty}", "NHIF") to 4-5 uses max in the text, strictly enforced.
+ - Spread naturally; no stuffing.
 2. Highlighting:
-   - Use <strong> ONLY for these exact terms: "${selectedData.name}", "${selectedData.mainSpecialty}", "${selectedData.qualifications}", "MB.,ChB.,(1985)", "MMed(O/G).,(1992)", "Maternal and Child Health", "Reproductive Health", "NHIF", "maternity", "Caesarean", "Obstetrics", "pregnancy", "delivery", "contraception", "menopause", "prenatal care", "family planning", "cervical screening".
-   - Bold each listed term at least once where appropriate in the content.
-   - Absolutely no bolding of unlisted terms, including "Gynaecology", "health", "care", "services", or any other generics not specified above.
-   - Limit <strong> application to 4-5 times max per term across all sections (e.g., bold "${selectedData.name}" exactly 5 times, no more).
+ - Use <strong> ONLY for these exact terms: "${selectedData.name}", "${selectedData.mainSpecialty}", "${qualifications}", "MB.,ChB.,(1985)", "MMed(O/G).,(1992)", "Maternal and Child Health", "Reproductive Health", "NHIF", "maternity", "Caesarean", "Obstetrics", "pregnancy", "delivery", "contraception", "menopause", "prenatal care", "family planning", "cervical screening".
+ - Bold each listed term at least once where appropriate in the content.
+ - Absolutely no bolding of unlisted terms, including "Gynaecology", "health", "care", "services", or any other generics not specified above.
+ - Limit <strong> application to 4-5 times max per term across all sections (e.g., bold "${selectedData.name}" exactly 5 times, no more).
 
 Introduction:
 - Start with: <p>
@@ -363,23 +389,23 @@ Introduction:
 Qualifications and Expertise:
 - Start with: <h2>Qualifications and Expertise</h2>
 - IMPORTANT: You MUST use HTML bullet list format with <ul> and <li> tags for 8-10 concise bullet pints (~140 words total).:
-  <ul>
-    <li>First qualification point</li>
-    <li>Second qualification point</li>
-    ...and so on
-  </ul>
-- Base on "${selectedData.qualifications}" and specialties/"About" (don't repeat same speciality keywords twice or thrice).
+<ul>
+  <li>First qualification point</li>
+  <li>Second qualification point</li>
+  ...and so on
+</ul>
+- Base on "${qualifications}" and specialties/"About" (don't repeat same speciality keywords twice or thrice).
 - Highlight per rules; no invented details; use "degree" singular for MB.,ChB.
 
 Services Section:
 - Start with: <h2>${selectedData.mainSpecialty} Services Offered by ${selectedData.name}</h2>
 - IMPORTANT: You MUST use HTML bullet list format with <ul> and <li> tags for 8-10 concise bullets (~140 words total).:
-  <ul>
-    <li>First service point</li>
-    <li>Second service point</li>
-    ...and so on
-  </ul>
-- Derive from "${selectedData.mainSpecialty}", "${selectedData.subSpecialties} (Don't include this if specialty is same as subspecialties and don't repeat speciality keywords twice or thrice)", "About".
+<ul>
+  <li>First service point</li>
+  <li>Second service point</li>
+  ...and so on
+</ul>
+- Derive from "${selectedData.mainSpecialty}", "${subSpecialties} (Don't include this if specialty is same as subspecialties and don't repeat speciality keywords twice or thrice)", "About".
 - Allow logical extensions (e.g., "Reproductive Health" includes contraception) tied to data.
 - Highlight per rules.
 
@@ -399,8 +425,10 @@ Style Guidelines:
 Format Requirements:
 - Use ONLY <h2>, <p>, <strong>, <ul> & <li> tags (no <h1> or other tags allowed).
 - Do not use <h1> tags under any circumstances.
-- For bullet points, you MUST use <ul> and <li> tags (no extra \n).
-- Add \n between sections.
+- For bullet points, you MUST use <ul> and <li> tags (no extra 
+).
+- Add 
+ between sections.
 - Return HTML content only.
 
 Strict Instructions:
@@ -438,17 +466,17 @@ Strict Instructions:
     const wordCountValidation = text.split(/\s+/).length
     if (Math.abs(wordCountValidation - wordCount) > wordCount * 0.1) {
       const retryPrompt = `
-        ${prompt}
+      ${prompt}
 
-        CRITICAL: The previous attempt did not meet the exact word count requirement.
-        Current word count: ${wordCountValidation}
-        Required word count: ${wordCount}
-        
-        Please regenerate the content with EXACTLY ${wordCount} words.
-        Maintain the same structure, formatting, and highlighting rules.
-        Ensure <strong> is applied ONLY to listed keywords and capped at 4-5 times per term.
-        REMEMBER: You MUST use <ul> and <li> tags for lists, NOT paragraphs <p> tags.
-      `
+      CRITICAL: The previous attempt did not meet the exact word count requirement.
+      Current word count: ${wordCountValidation}
+      Required word count: ${wordCount}
+      
+      Please regenerate the content with EXACTLY ${wordCount} words.
+      Maintain the same structure, formatting, and highlighting rules.
+      Ensure <strong> is applied ONLY to listed keywords and capped at 4-5 times per term.
+      REMEMBER: You MUST use <ul> and <li> tags for lists, NOT paragraphs <p> tags.
+    `
       const retryResult = await model.generateContent(retryPrompt)
       const retryResponse = await retryResult.response
       text = retryResponse
@@ -474,20 +502,20 @@ Strict Instructions:
 
     // For focus keyword, we'll use Gemini to generate a more targeted keyword
     const focusKeywordPrompt = `
-  Based on the following doctor information, provide a focused SEO keyword phrase (2-3 words) that would be most valuable for search engine optimization. The keyword should be specific to the doctor's main specialty and practice.
-  
-  Doctor Data:
-  - Name: ${selectedData.name}
-  - Main Specialty: ${selectedData.mainSpecialty}
-  - Subspecialties: ${selectedData.subSpecialties}
-  - Location: ${selectedData.location || "Kenya"}
-  
-  IMPORTANT RULES:
-  1. Return ONLY the keyword phrase (2-3 words), with no additional text or explanation.
-  2. The phrase should be natural and commonly searched, like "pediatric cardiology" or "orthopedic surgeon Kenya".
-  3. Do NOT repeat the same word multiple times in the phrase.
-  4. NEVER use abbreviations (e.g., use "General Practitioner" instead of "GP").
-  5. Always use full, complete terms without shortening.
+Based on the following doctor information, provide a focused SEO keyword phrase (2-3 words) that would be most valuable for search engine optimization. The keyword should be specific to the doctor's main specialty and practice.
+
+Doctor Data:
+- Name: ${selectedData.name}
+- Main Specialty: ${selectedData.mainSpecialty}
+- Subspecialties: ${subSpecialties}
+- Location: ${location}
+
+IMPORTANT RULES:
+1. Return ONLY the keyword phrase (2-3 words), with no additional text or explanation.
+2. The phrase should be natural and commonly searched, like "pediatric cardiology" or "orthopedic surgeon Kenya".
+3. Do NOT repeat the same word multiple times in the phrase.
+4. NEVER use abbreviations (e.g., use "General Practitioner" instead of "GP").
+5. Always use full, complete terms without shortening.
 `
 
     const keywordResult = await model.generateContent(focusKeywordPrompt)
@@ -504,17 +532,27 @@ Strict Instructions:
   } catch (error: unknown) {
     console.error("Detailed error:", error)
 
-    // Type guard for error handling
     const errorMessage = error instanceof Error ? error.message : String(error)
 
-    if (errorMessage.toLowerCase().includes("rate limit")) {
+    // Enhanced rate limit detection
+    if (
+      errorMessage.toLowerCase().includes("rate limit") ||
+      errorMessage.includes("429") ||
+      errorMessage.includes("too many requests")
+    ) {
       return Response.json(
         {
           error: "Rate limit exceeded",
           details: "Please wait a moment before trying again.",
           retryAfter: 60,
+          isRateLimit: true,
         },
-        { status: 429 },
+        {
+          status: 429,
+          headers: {
+            "Retry-After": "60",
+          },
+        },
       )
     }
 
