@@ -2,14 +2,20 @@ export interface DoctorData {
   name?: string
   Name?: string
   DOCTOR_NAME?: string
+  Fullname?: string
   specialty?: string
   Specialty?: string
   SPECIALTY?: string
-  qualifications?: string
   mainSpecialty?: string
   subSpecialties?: string
+  "Sub-Specialty"?: string
+  qualifications?: string
+  Qualifications?: string
   location?: string
+  Address?: string
   about?: string
+  "Reg No"?: string
+  Discipline?: string
   [key: string]: string | undefined
 }
 
@@ -29,4 +35,3 @@ export interface JsonData {
   sampleData: Record<string, string>
   rawData: DoctorData[]
 }
-

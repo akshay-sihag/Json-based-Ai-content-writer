@@ -70,11 +70,55 @@ const internalUrls = [
   "https://www.easyclinic.io/bridging-the-gap-how-tech-is-transforming-indian-healthcare/",
 ]
 
+// Helper function to find a value across multiple possible field names
+function findValueByPossibleKeys(data: Record<string, any>, possibleKeys: string[]): string | undefined {
+  for (const key of possibleKeys) {
+    if (data[key] && typeof data[key] === "string" && data[key].trim() !== "") {
+      return data[key]
+    }
+  }
+  return undefined
+}
+
+// Helper function to find contact information
+function findContactInfo(data: Record<string, any>): { email?: string; phone?: string; website?: string } {
+  const contactInfo: { email?: string; phone?: string; website?: string } = {}
+
+  // Look for email in various possible field names
+  const emailKeys = ["email", "Email", "EMAIL", "emailAddress", "EmailAddress", "contact_email", "contactEmail"]
+  contactInfo.email = findValueByPossibleKeys(data, emailKeys)
+
+  // Look for phone in various possible field names
+  const phoneKeys = ["phone", "Phone", "PHONE", "phoneNumber", "PhoneNumber", "contact", "Contact", "mobile", "Mobile"]
+  contactInfo.phone = findValueByPossibleKeys(data, phoneKeys)
+
+  // Look for website in various possible field names
+  const websiteKeys = ["website", "Website", "WEBSITE", "web", "Web", "url", "URL"]
+  contactInfo.website = findValueByPossibleKeys(data, websiteKeys)
+
+  return contactInfo
+}
+
 function generateMetaTitle(doctorData: DoctorData): string {
-  const name = doctorData.name || doctorData.Name || doctorData.DOCTOR_NAME || ""
-  const specialty =
-    doctorData.mainSpecialty || doctorData.specialty || doctorData.Specialty || doctorData.SPECIALTY || ""
-  let location = doctorData.location || ""
+  // Look for name in various possible field names
+  const nameKeys = ["name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName", "fullName", "FullName"]
+  const name = findValueByPossibleKeys(doctorData, nameKeys) || ""
+
+  // Look for specialty in various possible field names
+  const specialtyKeys = [
+    "mainSpecialty",
+    "specialty",
+    "Specialty",
+    "SPECIALTY",
+    "specialization",
+    "Specialization",
+    "field",
+  ]
+  const specialty = findValueByPossibleKeys(doctorData, specialtyKeys) || ""
+
+  // Look for location in various possible field names
+  const locationKeys = ["location", "Location", "city", "City", "country", "Country", "address", "Address"]
+  let location = findValueByPossibleKeys(doctorData, locationKeys) || ""
 
   // Replace N/A with Kenya
   if (!location || location.toLowerCase() === "n/a") {
@@ -91,11 +135,38 @@ function generateMetaTitle(doctorData: DoctorData): string {
 }
 
 function generateMetaDescription(doctorData: DoctorData): string {
-  const name = doctorData.name || doctorData.Name || doctorData.DOCTOR_NAME || ""
-  const specialty =
-    doctorData.mainSpecialty || doctorData.specialty || doctorData.Specialty || doctorData.SPECIALTY || ""
-  const qualifications = doctorData.qualifications || ""
-  let location = doctorData.location || ""
+  // Look for name in various possible field names
+  const nameKeys = ["name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName", "fullName", "FullName"]
+  const name = findValueByPossibleKeys(doctorData, nameKeys) || ""
+
+  // Look for specialty in various possible field names
+  const specialtyKeys = [
+    "mainSpecialty",
+    "specialty",
+    "Specialty",
+    "SPECIALTY",
+    "specialization",
+    "Specialization",
+    "field",
+  ]
+  const specialty = findValueByPossibleKeys(doctorData, specialtyKeys) || ""
+
+  // Look for qualifications in various possible field names
+  const qualificationKeys = [
+    "qualifications",
+    "Qualifications",
+    "degree",
+    "Degree",
+    "degrees",
+    "Degrees",
+    "education",
+    "Education",
+  ]
+  const qualifications = findValueByPossibleKeys(doctorData, qualificationKeys) || ""
+
+  // Look for location in various possible field names
+  const locationKeys = ["location", "Location", "city", "City", "country", "Country", "address", "Address"]
+  let location = findValueByPossibleKeys(doctorData, locationKeys) || ""
 
   // Replace N/A with Kenya
   if (!location || location.toLowerCase() === "n/a") {
@@ -131,7 +202,7 @@ function generateMetaDescription(doctorData: DoctorData): string {
     "providing expert medical services.",
     "focused on delivering quality healthcare.",
   ]
-  const randomClosing = closingPhrases[Math.floor(Math.random() * closingPhrases.length)]
+  const randomClosing = closingPhrases[Math.floor(Math.random() * adjectives.length)]
   metaDescription += ` ${randomClosing}`
 
   // Ensure it doesn't exceed 160 characters (maximum limit, not target)
@@ -143,10 +214,25 @@ function generateMetaDescription(doctorData: DoctorData): string {
 }
 
 function generateSlug(doctorData: DoctorData): string {
-  const name = doctorData.name || doctorData.Name || doctorData.DOCTOR_NAME || ""
-  const specialty =
-    doctorData.mainSpecialty || doctorData.specialty || doctorData.Specialty || doctorData.SPECIALTY || ""
-  let location = doctorData.location || ""
+  // Look for name in various possible field names
+  const nameKeys = ["name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName", "fullName", "FullName"]
+  const name = findValueByPossibleKeys(doctorData, nameKeys) || ""
+
+  // Look for specialty in various possible field names
+  const specialtyKeys = [
+    "mainSpecialty",
+    "specialty",
+    "Specialty",
+    "SPECIALTY",
+    "specialization",
+    "Specialization",
+    "field",
+  ]
+  const specialty = findValueByPossibleKeys(doctorData, specialtyKeys) || ""
+
+  // Look for location in various possible field names
+  const locationKeys = ["location", "Location", "city", "City", "country", "Country", "address", "Address"]
+  let location = findValueByPossibleKeys(doctorData, locationKeys) || ""
 
   // Replace N/A with Kenya
   if (!location || location.toLowerCase() === "n/a") {
@@ -164,9 +250,21 @@ function generateSlug(doctorData: DoctorData): string {
 }
 
 function generateFocusKeyword(doctorData: DoctorData): string {
-  const specialty =
-    doctorData.mainSpecialty || doctorData.specialty || doctorData.Specialty || doctorData.SPECIALTY || ""
-  let location = doctorData.location || ""
+  // Look for specialty in various possible field names
+  const specialtyKeys = [
+    "mainSpecialty",
+    "specialty",
+    "Specialty",
+    "SPECIALTY",
+    "specialization",
+    "Specialization",
+    "field",
+  ]
+  const specialty = findValueByPossibleKeys(doctorData, specialtyKeys) || ""
+
+  // Look for location in various possible field names
+  const locationKeys = ["location", "Location", "city", "City", "country", "Country", "address", "Address"]
+  let location = findValueByPossibleKeys(doctorData, locationKeys) || ""
 
   // Replace N/A with Kenya
   if (!location || location.toLowerCase() === "n/a") {
@@ -275,31 +373,53 @@ function linkKeywords(text: string, keywords: Array<{ keyword: string; url: stri
   return text
 }
 
+// Update the DoctorData interface to make all fields optional
 interface DoctorData {
-  name: string
-  Name?: string
-  DOCTOR_NAME?: string
-  specialty?: string
-  Specialty?: string
-  SPECIALTY?: string
-  mainSpecialty: string
-  subSpecialties: string
-  qualifications: string
-  location?: string
-  about?: string
   [key: string]: string | undefined
 }
 
+// Update the enforceBoldCaps function to handle all optional fields
 function enforceBoldCaps(text: string, selectedData: DoctorData) {
-  // Fix: Add null check for selectedData.about before calling match()
-  const aboutMatches = selectedData.about
-    ? selectedData.about.match(/MB.,ChB.,$$\d{4}$$|MMed$$O\/G$$.,$$\d{4}$$/g) || []
-    : []
+  // Look for about in various possible field names
+  const aboutKeys = ["about", "About", "biography", "Biography", "description", "Description", "profile", "Profile"]
+  const about = findValueByPossibleKeys(selectedData, aboutKeys)
+
+  // Fix: Add null check for about before calling match()
+  const aboutMatches = about ? about.match(/MB.,ChB.,$$\d{4}$$|MMed$$O\/G$$.,$$\d{4}$$/g) || [] : []
+
+  // Look for name in various possible field names
+  const nameKeys = ["name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName", "fullName", "FullName"]
+  const name = findValueByPossibleKeys(selectedData, nameKeys)
+
+  // Look for specialty in various possible field names
+  const specialtyKeys = [
+    "mainSpecialty",
+    "specialty",
+    "Specialty",
+    "SPECIALTY",
+    "specialization",
+    "Specialization",
+    "field",
+  ]
+  const specialty = findValueByPossibleKeys(selectedData, specialtyKeys)
+
+  // Look for qualifications in various possible field names
+  const qualificationKeys = [
+    "qualifications",
+    "Qualifications",
+    "degree",
+    "Degree",
+    "degrees",
+    "Degrees",
+    "education",
+    "Education",
+  ]
+  const qualifications = findValueByPossibleKeys(selectedData, qualificationKeys)
 
   const allowedTerms = [
-    selectedData.name,
-    selectedData.mainSpecialty,
-    selectedData.qualifications,
+    name,
+    specialty,
+    qualifications,
     ...aboutMatches,
     "Maternal and Child Health",
     "Reproductive Health",
@@ -327,6 +447,7 @@ function enforceBoldCaps(text: string, selectedData: DoctorData) {
   })
 }
 
+// Update the POST function to handle all optional fields and different field names
 export async function POST(req: Request) {
   try {
     const { selectedData, selectedHeaders, tone, wordCount } = await req.json()
@@ -334,14 +455,58 @@ export async function POST(req: Request) {
       throw new Error("Missing required data fields")
     }
 
-    const doctorName = selectedData.name || selectedData.Name || selectedData.DOCTOR_NAME || "the doctor"
-    const mainSpecialty = selectedData.specialty || selectedData.Specialty || selectedData.SPECIALTY || "Medical"
+    // Get doctor name from various possible field names
+    const nameKeys = ["name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName", "fullName", "FullName", "Fullname"]
+    const doctorName = findValueByPossibleKeys(selectedData, nameKeys) || "the doctor"
 
-    // Add null check for selectedData fields
-    const about = selectedData.about || "Not provided"
-    const qualifications = selectedData.qualifications || "Not provided"
-    const subSpecialties = selectedData.subSpecialties || "Not provided"
-    const location = selectedData.location || "Not specified"
+    // Get specialty from various possible field names
+    const specialtyKeys = [
+      "mainSpecialty",
+      "specialty",
+      "Specialty",
+      "SPECIALTY",
+      "specialization",
+      "Specialization",
+      "field",
+      "Discipline",
+    ]
+    const mainSpecialty = findValueByPossibleKeys(selectedData, specialtyKeys) || "Medical"
+
+    // Get about from various possible field names
+    const aboutKeys = ["about", "About", "biography", "Biography", "description", "Description", "profile", "Profile"]
+    const about = findValueByPossibleKeys(selectedData, aboutKeys) || "Not provided"
+
+    // Get qualifications from various possible field names
+    const qualificationKeys = [
+      "qualifications",
+      "Qualifications",
+      "degree",
+      "Degree",
+      "degrees",
+      "Degrees",
+      "education",
+      "Education",
+    ]
+    const qualifications = findValueByPossibleKeys(selectedData, qualificationKeys) || "Not provided"
+
+    // Get subspecialties from various possible field names
+    const subSpecialtyKeys = [
+      "subSpecialties",
+      "subspecialties",
+      "SubSpecialties",
+      "subSpecialty",
+      "subspecialty",
+      "secondarySpecialty",
+      "Sub-Specialty",
+    ]
+    const subSpecialties = findValueByPossibleKeys(selectedData, subSpecialtyKeys) || mainSpecialty // Default to mainSpecialty if not provided
+
+    // Get location from various possible field names
+    const locationKeys = ["location", "Location", "city", "City", "country", "Country", "address", "Address"]
+    const location = findValueByPossibleKeys(selectedData, locationKeys) || "Not specified"
+
+    // Get contact information
+    const contactInfo = findContactInfo(selectedData)
 
     const contentContext = selectedHeaders
       .map((header: string) => {
@@ -350,16 +515,40 @@ export async function POST(req: Request) {
       })
       .join("\n")
 
+    // Prepare contact information for the prompt
+    let contactSection = `<p>For inquiries, please contact <strong>${doctorName}</strong> <a href="#contact">here</a></p>`
+
+    // If email is available, include it in the contact section
+    if (contactInfo.email) {
+      contactSection = `<p>For inquiries, please contact <strong>${doctorName}</strong> at <a href="mailto:${contactInfo.email}">${contactInfo.email}</a></p>`
+    }
+
+    // If phone is available and email is not, use phone
+    else if (contactInfo.phone) {
+      contactSection = `<p>For inquiries, please contact <strong>${doctorName}</strong> at ${contactInfo.phone}</p>`
+    }
+
+    // Ensure we have valid values for the prompt
+    const safeMainSpecialty = mainSpecialty || "Medical"
+    const safeDoctorName = doctorName || "the doctor"
+
+    // Update the h2 tags in the prompt to use safe values
+    const servicesHeader = `<h2>${safeMainSpecialty} Services Offered by ${safeDoctorName}</h2>`
+    const bookingHeader = `<h2>Book an Appointment with ${safeDoctorName}</h2>`
+
     const prompt = `
-You are a professional medical content writer. Create SEO-optimized content about ${doctorName} based STRICTLY on the following data. Do not fabricate details beyond logical extensions of specialties explicitly tied to the data. Use only the provided data and context below.
+You are a professional medical content writer. Create SEO-optimized content about ${safeDoctorName} based STRICTLY on the following data. Do not fabricate details beyond logical extensions of specialties explicitly tied to the data. Use only the provided data and context below.
 
 Doctor Data:
-- Name: ${selectedData.name}
+- Name: ${safeDoctorName}
 - Qualifications: ${qualifications}
-- Main Specialty: ${selectedData.mainSpecialty}
-- Subspecialties: ${subSpecialties}
+- Main Specialty: ${safeMainSpecialty}
+- Subspecialties: ${subSpecialties || safeMainSpecialty}
 - Location: ${location}
 - About: ${about}
+${contactInfo.email ? `- Email: ${contactInfo.email}` : ""}
+${contactInfo.phone ? `- Phone: ${contactInfo.phone}` : ""}
+${contactInfo.website ? `- Website: ${contactInfo.website}` : ""}
 
 Additional Context:
 ${contentContext}
@@ -370,17 +559,17 @@ STRICT Requirements:
 
 KEYWORD FREQUENCY AND HIGHLIGHTING:
 1. Keyword Usage:
- - Limit each key term (e.g., "${selectedData.mainSpecialty}", "NHIF") to 4-5 uses max in the text, strictly enforced.
+ - Limit each key term (e.g., "${safeMainSpecialty}", "NHIF") to 4-5 uses max in the text, strictly enforced.
  - Spread naturally; no stuffing.
 2. Highlighting:
- - Use <strong> ONLY for these exact terms: "${selectedData.name}", "${selectedData.mainSpecialty}", "${qualifications}", "MB.,ChB.,(1985)", "MMed(O/G).,(1992)", "Maternal and Child Health", "Reproductive Health", "NHIF", "maternity", "Caesarean", "Obstetrics", "pregnancy", "delivery", "contraception", "menopause", "prenatal care", "family planning", "cervical screening".
+ - Use <strong> ONLY for these exact terms: "${safeDoctorName}", "${safeMainSpecialty}", "${qualifications}", "MB.,ChB.,(1985)", "MMed(O/G).,(1992)", "Maternal and Child Health", "Reproductive Health", "NHIF", "maternity", "Caesarean", "Obstetrics", "pregnancy", "delivery", "contraception", "menopause", "prenatal care", "family planning", "cervical screening".
  - Bold each listed term at least once where appropriate in the content.
  - Absolutely no bolding of unlisted terms, including "Gynaecology", "health", "care", "services", or any other generics not specified above.
- - Limit <strong> application to 4-5 times max per term across all sections (e.g., bold "${selectedData.name}" exactly 5 times, no more).
+ - Limit <strong> application to 4-5 times max per term across all sections (e.g., bold "${safeDoctorName}" exactly 5 times, no more).
 
 Introduction:
 - Start with: <p>
-- Write an engaging, ~140-word summary of <strong>${selectedData.name}</strong>.
+- Write an engaging, ~140-word summary of <strong>${safeDoctorName}</strong>.
 - Use only data: qualifications, specialty, subspecialties (Don't include this if specialty is same as subspecialties and don't repeat speciality keywords twice or thrice) , location (use location as "Kenya" if "Not specified" or N/A), "About".
 - Focus on expertise and unique benefits (e.g., NHIF-covered maternity care).
 - Keep natural and conversational.
@@ -398,44 +587,23 @@ Qualifications and Expertise:
 - Highlight per rules; no invented details; use "degree" singular for MB.,ChB.
 
 Services Section:
-- Start with: <h2>${selectedData.mainSpecialty} Services Offered by ${selectedData.name}</h2>
+- Start with: ${servicesHeader}
 - IMPORTANT: You MUST use HTML bullet list format with <ul> and <li> tags for 8-10 concise bullets (~140 words total).:
 <ul>
   <li>First service point</li>
   <li>Second service point</li>
   ...and so on
 </ul>
-- Derive from "${selectedData.mainSpecialty}", "${subSpecialties} (Don't include this if specialty is same as subspecialties and don't repeat speciality keywords twice or thrice)", "About".
+- Derive from "${safeMainSpecialty}", "${subSpecialties || safeMainSpecialty} (Don't include this if specialty is same as subspecialties and don't repeat speciality keywords twice or thrice)", "About".
 - Allow logical extensions (e.g., "Reproductive Health" includes contraception) tied to data.
 - Highlight per rules.
 
 Booking Information:
-- Start with: <h2>Book an Appointment with ${selectedData.name}</h2>
+- Start with: ${bookingHeader}
 - Write 2 concise, engaging sentences in a single <p> tag (~60 words with contact line).
-- Highlight <strong>${selectedData.mainSpecialty}</strong> expertise and benefits; no extra details.
+- Highlight <strong>${safeMainSpecialty}</strong> expertise and benefits; no extra details.
 - Use natural tone; no repetition.
-- End with: <p>For inquiries, please contact <strong>${selectedData.name}</strong> <a href="#contact">here</a></p>
-
-Style Guidelines:
-- Use a ${tone} tone.
-- Write clear, concise sentences; correct grammar (e.g., "Caesarean", "non-gynaecological").
-- Standardize spelling as "Gynecologist" and "Obstetrics" throughout (e.g., use "Gynecologist" not "Gynaecologist").
-- Optimize for SEO with key phrases (e.g., "NHIF maternity care", "prenatal care").
-
-Format Requirements:
-- Use ONLY <h2>, <p>, <strong>, <ul> & <li> tags (no <h1> or other tags allowed).
-- Do not use <h1> tags under any circumstances.
-- For bullet points, you MUST use <ul> and <li> tags (no extra 
-).
-- Add 
- between sections.
-- Return HTML content only.
-
-Strict Instructions:
-- Stick to data; logical extensions only for services.
-- If location is "Not specified," use "his practice".
-- Exactly ${wordCount} words.
-- ALWAYS use proper HTML lists with <ul> and <li> tags where mentioned specifically.
+- End with: ${contactSection}
 `
 
     const model = genAI.getGenerativeModel({
@@ -495,7 +663,7 @@ Strict Instructions:
       .replace(/<\/p>/g, "</p>\n")
       .trim()
 
-    // Generate the additional fields
+    // Generate the additional fields with proper null checks
     const metaTitle = generateMetaTitle(selectedData)
     const metaDescription = generateMetaDescription(selectedData)
     const slug = generateSlug(selectedData)
@@ -505,8 +673,8 @@ Strict Instructions:
 Based on the following doctor information, provide a focused SEO keyword phrase (2-3 words) that would be most valuable for search engine optimization. The keyword should be specific to the doctor's main specialty and practice.
 
 Doctor Data:
-- Name: ${selectedData.name}
-- Main Specialty: ${selectedData.mainSpecialty}
+- Name: ${doctorName}
+- Main Specialty: ${mainSpecialty}
 - Subspecialties: ${subSpecialties}
 - Location: ${location}
 
@@ -565,4 +733,3 @@ IMPORTANT RULES:
     )
   }
 }
-
