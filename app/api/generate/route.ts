@@ -101,8 +101,8 @@ function findContactInfo(data: Record<string, any>): { email?: string; phone?: s
 
 function generateMetaTitle(doctorData: DoctorData): string {
   // Look for name in various possible field names
-  const nameKeys = ["name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName", "fullName", "FullName"]
-  const name = findValueByPossibleKeys(doctorData, nameKeys) || ""
+  const nameKeys = ["name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName", "fullName", "FullName", "Fullname"]
+  const name = findValueByPossibleKeys(doctorData, nameKeys) || "Doctor"
 
   // Look for specialty in various possible field names
   const specialtyKeys = [
@@ -113,12 +113,22 @@ function generateMetaTitle(doctorData: DoctorData): string {
     "specialization",
     "Specialization",
     "field",
+    "Discipline",
   ]
-  const specialty = findValueByPossibleKeys(doctorData, specialtyKeys) || ""
+  const specialty = findValueByPossibleKeys(doctorData, specialtyKeys) || "Medical Professional"
 
   // Look for location in various possible field names
   const locationKeys = ["location", "Location", "city", "City", "country", "Country", "address", "Address"]
-  let location = findValueByPossibleKeys(doctorData, locationKeys) || ""
+  const locationFull = findValueByPossibleKeys(doctorData, locationKeys) || "Kenya"
+
+  // Extract only the last word from the location (e.g., "NAIROBI" from "P.O BOX 32268 00600 NAIROBI")
+  let location = locationFull
+
+  // If location contains multiple words, get the last word
+  if (locationFull && locationFull.includes(" ")) {
+    const locationWords = locationFull.trim().split(/\s+/)
+    location = locationWords[locationWords.length - 1]
+  }
 
   // Replace N/A with Kenya
   if (!location || location.toLowerCase() === "n/a") {
@@ -136,7 +146,7 @@ function generateMetaTitle(doctorData: DoctorData): string {
 
 function generateMetaDescription(doctorData: DoctorData): string {
   // Look for name in various possible field names
-  const nameKeys = ["name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName", "fullName", "FullName", "Fullname"]
+  const nameKeys = ["name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName", "fullName", "FullName"]
   const name = findValueByPossibleKeys(doctorData, nameKeys) || ""
 
   // Look for specialty in various possible field names
@@ -148,7 +158,6 @@ function generateMetaDescription(doctorData: DoctorData): string {
     "specialization",
     "Specialization",
     "field",
-    "Discipline",
   ]
   const specialty = findValueByPossibleKeys(doctorData, specialtyKeys) || ""
 
@@ -167,17 +176,11 @@ function generateMetaDescription(doctorData: DoctorData): string {
 
   // Look for location in various possible field names
   const locationKeys = ["location", "Location", "city", "City", "country", "Country", "address", "Address"]
-  const fullLocation = findValueByPossibleKeys(doctorData, locationKeys) || ""
+  let location = findValueByPossibleKeys(doctorData, locationKeys) || ""
 
-  // Extract only the last word from the location (likely city or country name)
-  let location = "Kenya"
-  if (fullLocation && fullLocation.toLowerCase() !== "n/a") {
-    const locationParts = fullLocation.split(/\s+/)
-    location = locationParts[locationParts.length - 1]
-    // If the last word is a postal code or number, use the second-to-last word
-    if (/^\d+$/.test(location) && locationParts.length > 1) {
-      location = locationParts[locationParts.length - 2]
-    }
+  // Replace N/A with Kenya
+  if (!location || location.toLowerCase() === "n/a") {
+    location = "Kenya"
   }
 
   // Create a meta description using the template
@@ -209,7 +212,7 @@ function generateMetaDescription(doctorData: DoctorData): string {
     "providing expert medical services.",
     "focused on delivering quality healthcare.",
   ]
-  const randomClosing = closingPhrases[Math.floor(Math.random() * closingPhrases.length)]
+  const randomClosing = closingPhrases[Math.floor(Math.random() * adjectives.length)]
   metaDescription += ` ${randomClosing}`
 
   // Ensure it doesn't exceed 160 characters (maximum limit, not target)
@@ -222,8 +225,8 @@ function generateMetaDescription(doctorData: DoctorData): string {
 
 function generateSlug(doctorData: DoctorData): string {
   // Look for name in various possible field names
-  const nameKeys = ["name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName", "fullName", "FullName", "Fullname"]
-  const name = findValueByPossibleKeys(doctorData, nameKeys) || "doctor"
+  const nameKeys = ["name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName", "fullName", "FullName"]
+  const name = findValueByPossibleKeys(doctorData, nameKeys) || ""
 
   // Look for specialty in various possible field names
   const specialtyKeys = [
@@ -234,9 +237,8 @@ function generateSlug(doctorData: DoctorData): string {
     "specialization",
     "Specialization",
     "field",
-    "Discipline",
   ]
-  const specialty = findValueByPossibleKeys(doctorData, specialtyKeys) || "medical"
+  const specialty = findValueByPossibleKeys(doctorData, specialtyKeys) || ""
 
   // Look for location in various possible field names
   const locationKeys = ["location", "Location", "city", "City", "country", "Country", "address", "Address"]
@@ -544,9 +546,6 @@ export async function POST(req: Request) {
     const servicesHeader = `<h2>${safeMainSpecialty} Services Offered by ${safeDoctorName}</h2>`
     const bookingHeader = `<h2>Book an Appointment with ${safeDoctorName}</h2>`
 
-    // Randomly decide whether to include the doctor's name in the focus keyword prompt
-    const includeNameInKeyword = Math.random() > 0.5
-
     const prompt = `
 You are a professional medical content writer. Create SEO-optimized content about ${safeDoctorName} based STRICTLY on the following data. Do not fabricate details beyond logical extensions of specialties explicitly tied to the data. Use only the provided data and context below.
 
@@ -695,7 +694,6 @@ IMPORTANT RULES:
 3. Do NOT repeat the same word multiple times in the phrase.
 4. NEVER use abbreviations (e.g., use "General Practitioner" instead of "GP").
 5. Always use full, complete terms without shortening.
-${includeNameInKeyword ? "6. Include the doctor's name in the keyword phrase if it makes sense for SEO." : ""}
 `
 
     const keywordResult = await model.generateContent(focusKeywordPrompt)
