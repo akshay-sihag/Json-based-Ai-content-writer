@@ -3,71 +3,101 @@ import { GoogleGenerativeAI } from "@google/generative-ai"
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!)
 
 const internalUrls = [
-  "https://www.easyclinic.io/",
-  "https://www.easyclinic.io/kenya/",
-  "https://www.easyclinic.io/testimonials/",
-  "https://www.easyclinic.io/malaysia/",
-  "https://www.easyclinic.io/ent/",
-  "https://www.easyclinic.io/cardiology/",
-  "https://www.easyclinic.io/emr-landing-page/",
-  "https://www.easyclinic.io/psychology/",
-  "https://www.easyclinic.io/mental-health/",
-  "https://www.easyclinic.io/family-physician/",
-  "https://www.easyclinic.io/trichology/",
-  "https://www.easyclinic.io/cosmetology/",
-  "https://www.easyclinic.io/orthopedic/",
-  "https://www.easyclinic.io/rheumatology/",
-  "https://www.easyclinic.io/diabetology/",
-  "https://www.easyclinic.io/aesthetic/",
-  "https://www.easyclinic.io/general-surgery/",
-  "https://www.easyclinic.io/dermatology/",
-  "https://www.easyclinic.io/endocrinology/",
-  "https://www.easyclinic.io/pulmonology/",
-  "https://www.easyclinic.io/ophthalmology/",
-  "https://www.easyclinic.io/psychiatry/",
-  "https://www.easyclinic.io/general-practitioner/",
-  "https://www.easyclinic.io/hematology/",
-  "https://www.easyclinic.io/obs-gynae/",
-  "https://www.easyclinic.io/nephrology/",
-  "https://www.easyclinic.io/gastroenterology/",
-  "https://www.easyclinic.io/paediatric/",
-  "https://www.easyclinic.io/neurology/",
-  "https://www.easyclinic.io/urology/",
-  "https://www.easyclinic.io/ivf/",
-  "https://www.easyclinic.io/immunology/",
-  "https://www.easyclinic.io/oncology/",
-  "https://www.easyclinic.io/sexology/",
-  "https://www.easyclinic.io/allergy/",
-  "https://www.easyclinic.io/physiotherapy/",
-  "https://www.easyclinic.io/pathology/",
-  "https://www.easyclinic.io/radiology/",
-  "https://www.easyclinic.io/dental/",
-  "https://www.easyclinic.io/ayurveda/",
-  "https://www.easyclinic.io/alternative-medicine/",
-  "https://www.easyclinic.io/revolutionizing-emr-documentation-how-easy-clinics-ai-powered-transcription-improves-healthcare-efficiency/",
-  "https://www.easyclinic.io/how-ai-contributes-to-minimizing-medical-billing-errors/",
-  "https://www.easyclinic.io/ai-for-dental-clinic-management-revolutionizing-patient-care-with-easy-clinic/",
-  "https://www.easyclinic.io/ai-for-diabetologists-the-future-of-diabetes-care-with-advanced-technology/",
-  "https://www.easyclinic.io/how-ai-powered-emr-software-is-transforming-clinic-management/",
-  "https://www.easyclinic.io/how-ai-for-doctors-is-transforming-clinical-practice/",
-  "https://www.easyclinic.io/ai-enabled-telemedicine-solutions-the-future-of-digital-healthcare/",
-  "https://www.easyclinic.io/ai-in-health-data-analytics-smarter-insights-for-clinics/",
-  "https://www.easyclinic.io/easy-clinic-patient-engagement-with-ai-smart-healthcare-solutions/",
-  "https://www.easyclinic.io/ai-powered-medical-billing-software-transforming-healthcare-finance/",
-  "https://www.easyclinic.io/why-legacy-systems-need-an-upgrade-the-hidden-costs-of-staying-behind/",
-  "https://www.easyclinic.io/how-to-kickstart-your-doctorpreneur-journey-finding-the-ultimate-clinic-management-solution/",
-  "https://www.easyclinic.io/tips-to-help-you-deliver-professional-care-online/",
-  "https://www.easyclinic.io/how-to-make-your-waiting-room-more-patient-friendly/",
-  "https://www.easyclinic.io/why-clinic-management-solution-is-must-for-clinics/",
-  "https://www.easyclinic.io/top-strategies-to-boost-patient-acquisition-in-2024/",
-  "https://www.easyclinic.io/streamlining-clinic-administration-the-key-to-increased-revenue/",
-  "https://www.easyclinic.io/questions-to-ask-your-clinic-emr-software-provider/",
-  "https://www.easyclinic.io/navigating-legacy-system-ehr-data-migration/",
-  "https://www.easyclinic.io/how-ai-can-enhance-patient-engagement-across-the-clinic-journey/",
-  "https://www.easyclinic.io/features-that-your-telemedicine-software-should-have/",
-  "https://www.easyclinic.io/faqs-on-emr-medical-software/",
-  "https://www.easyclinic.io/check-these-useful-insights-on-running-a-clinic-efficiently/",
-  "https://www.easyclinic.io/bridging-the-gap-how-tech-is-transforming-indian-healthcare/",
+"https://www.easyclinic.io/",
+"https://www.easyclinic.io/pediatric/",
+"https://www.easyclinic.io/pricing/",
+"https://www.easyclinic.io/dermatology/",
+"https://www.easyclinic.io/urology/",
+"https://www.easyclinic.io/trichology/",
+"https://www.easyclinic.io/sexology/",
+"https://www.easyclinic.io/rheumatology/",
+"https://www.easyclinic.io/radiology/",
+"https://www.easyclinic.io/psychology/",
+"https://www.easyclinic.io/psychiatry/",
+"https://www.easyclinic.io/physiotherapy/",
+"https://www.easyclinic.io/pathology/",
+"https://www.easyclinic.io/orthopedic/",
+"https://www.easyclinic.io/ophthalmology/",
+"https://www.easyclinic.io/oncology/",
+"https://www.easyclinic.io/obs-gynae/",
+"https://www.easyclinic.io/neurology/",
+"https://www.easyclinic.io/nephrology/",
+"https://www.easyclinic.io/ivf/",
+"https://www.easyclinic.io/immunology/",
+"https://www.easyclinic.io/hematology/",
+"https://www.easyclinic.io/general-practitioner/",
+"https://www.easyclinic.io/gastroenterology/",
+"https://www.easyclinic.io/family-physician/",
+"https://www.easyclinic.io/endocrinology/",
+"https://www.easyclinic.io/diabetology/",
+"https://www.easyclinic.io/dental/",
+"https://www.easyclinic.io/cosmetology/",
+"https://www.easyclinic.io/ayurveda/",
+"https://www.easyclinic.io/alternative-medicine/",
+"https://www.easyclinic.io/allergy/",
+"https://www.easyclinic.io/aesthetic/",
+"https://www.easyclinic.io/appointment-scheduling-at-easy-clinic/",
+"https://www.easyclinic.io/patient-engagement-at-easyclinic/",
+"https://www.easyclinic.io/hospital-opd-nursing-home-software/",
+"https://www.easyclinic.io/malaysia/",
+"https://www.easyclinic.io/kenya/",
+"https://www.easyclinic.io/ent/",
+"https://www.easyclinic.io/cardiology/",
+"https://www.easyclinic.io/mental-health/",
+"https://www.easyclinic.io/general-surgery/",
+"https://www.easyclinic.io/pulmonology/",
+"https://www.easyclinic.io/how-do-i-get-approval-from-the-kmpdc-in-kenya/",
+"https://www.easyclinic.io/how-to-get-approval-from-the-medical-practitioners-and-dentists-council-in-india-nmc-dci/",
+"https://www.easyclinic.io/how-much-does-it-cost-to-open-a-clinic-in-mumbai/",
+"https://www.easyclinic.io/how-do-i-start-a-private-clinic-in-india/",
+"https://www.easyclinic.io/what-are-the-registration-and-licensing-requirements-for-doctors-in-kenya/",
+"https://www.easyclinic.io/how-much-does-it-cost-to-open-a-clinic-in-nairobi/",
+"https://www.easyclinic.io/what-are-the-best-locations-to-open-a-clinic-in-kenya/",
+"https://www.easyclinic.io/the-ultimate-guide-to-starting-a-clinic-in-kenya/",
+"https://www.easyclinic.io/ai-in-follow-up-automation-improving-patient-adherence/",
+"https://www.easyclinic.io/ai-in-dermatology-emr-simplifying-skin-care-records/",
+"https://www.easyclinic.io/ai-in-psychiatric-emr-supporting-mental-wellness/",
+"https://www.easyclinic.io/ai-in-clinic-data-security-protecting-patient-privacy/",
+"https://www.easyclinic.io/ai-in-paperless-clinics-cutting-administrative-clutter/",
+"https://www.easyclinic.io/ai-in-cardiology-emr-precision-heart-care/",
+"https://www.easyclinic.io/ai-in-clinic-staff-coordination-optimizing-teamwork/",
+"https://www.easyclinic.io/ai-in-multi-location-clinics-streamlining-operations-across-branches/",
+"https://www.easyclinic.io/ai-in-orthopedic-emr-enhancing-bone-health-care/",
+"https://www.easyclinic.io/ai-in-surgical-emr-streamlining-operative-care/",
+"https://www.easyclinic.io/ai-in-preventive-care-analytics-predicting-health-risks/",
+"https://www.easyclinic.io/ai-in-referral-management-enhancing-care-coordination-for-better-patient-outcomes/",
+"https://www.easyclinic.io/ai-in-pediatric-emr-tracking-child-health-made-easy/",
+"https://www.easyclinic.io/how-ai-in-clinic-inventory-management-boosts-efficiency/",
+"https://www.easyclinic.io/ai-in-patient-triage-speeding-up-emergency-care/",
+"https://www.easyclinic.io/ai-in-chronic-care-managing-long-term-conditions/",
+"https://www.easyclinic.io/ai-in-gynecology-emr-empowering-womens-health/",
+"https://www.easyclinic.io/ai-in-diagnostic-accuracy-reducing-clinical-errors/",
+"https://www.easyclinic.io/ai-in-multilingual-prescriptions-bridging-language-gaps/",
+"https://www.easyclinic.io/ai-in-radiology-workflows-enhancing-imaging-efficiency/",
+"https://www.easyclinic.io/revolutionizing-emr-documentation-how-easy-clinics-ai-powered-transcription-improves-healthcare-efficiency/",
+"https://www.easyclinic.io/how-ai-contributes-to-minimizing-medical-billing-errors/",
+"https://www.easyclinic.io/ai-for-dental-clinic-management-revolutionizing-patient-care-with-easy-clinic/",
+"https://www.easyclinic.io/ai-for-diabetologists-the-future-of-diabetes-care-with-advanced-technology/",
+"https://www.easyclinic.io/how-ai-powered-emr-software-is-transforming-clinic-management/",
+"https://www.easyclinic.io/how-ai-for-doctors-is-transforming-clinical-practice/",
+"https://www.easyclinic.io/ai-enabled-telemedicine-solutions-the-future-of-digital-healthcare/",
+"https://www.easyclinic.io/ai-in-health-data-analytics-smarter-insights-for-clinics/",
+"https://www.easyclinic.io/easy-clinic-patient-engagement-with-ai-smart-healthcare-solutions/",
+"https://www.easyclinic.io/ai-powered-medical-billing-software-transforming-healthcare-finance/",
+"https://www.easyclinic.io/why-legacy-systems-need-an-upgrade-the-hidden-costs-of-staying-behind/",
+"https://www.easyclinic.io/how-to-kickstart-your-doctorpreneur-journey-finding-the-ultimate-clinic-management-solution/",
+"https://www.easyclinic.io/tips-to-help-you-deliver-professional-care-online/",
+"https://www.easyclinic.io/how-to-make-your-waiting-room-more-patient-friendly/",
+"https://www.easyclinic.io/why-clinic-management-solution-is-must-for-clinics/",
+"https://www.easyclinic.io/top-strategies-to-boost-patient-acquisition-in-2024/",
+"https://www.easyclinic.io/streamlining-clinic-administration-the-key-to-increased-revenue/",
+"https://www.easyclinic.io/questions-to-ask-your-clinic-emr-software-provider/",
+"https://www.easyclinic.io/navigating-legacy-system-ehr-data-migration/",
+"https://www.easyclinic.io/how-ai-can-enhance-patient-engagement-across-the-clinic-journey/",
+"https://www.easyclinic.io/features-that-your-telemedicine-software-should-have/",
+"https://www.easyclinic.io/faqs-on-emr-medical-software/",
+"https://www.easyclinic.io/check-these-useful-insights-on-running-a-clinic-efficiently/",
+"https://www.easyclinic.io/bridging-the-gap-how-tech-is-transforming-indian-healthcare/",
 ]
 
 // Helper function to find a value across multiple possible field names
@@ -99,9 +129,24 @@ function findContactInfo(data: Record<string, any>): { email?: string; phone?: s
   return contactInfo
 }
 
+// Helper function to extract last word from location/address
+function extractLastLocationWord(location: string): string {
+  if (!location || location.toLowerCase() === "n/a") {
+    return "Kenya"
+  }
+  // Split by multiple possible separators (spaces, commas, periods)
+  const words = location.trim().split(/[\s,\.]+/).filter(word => word.length > 0)
+  const lastWord = words[words.length - 1]
+  // If last word is a number, PO BOX, or empty, try second to last word or return Kenya
+  if (!lastWord || /^\d+$/.test(lastWord) || lastWord.toLowerCase().includes('box')) {
+    return words[words.length - 2] || "Kenya"
+  }
+  return lastWord
+}
+
 function generateMetaTitle(doctorData: DoctorData): string {
-  // Look for name in various possible field names
-  const nameKeys = ["name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName", "fullName", "FullName", "Fullname"]
+  // Look for name in various possible field names, prioritizing Fullname
+  const nameKeys = ["Fullname", "fullName", "FullName", "name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName"]
   const name = findValueByPossibleKeys(doctorData, nameKeys) || "Doctor"
 
   // Look for specialty in various possible field names
@@ -109,6 +154,7 @@ function generateMetaTitle(doctorData: DoctorData): string {
     "mainSpecialty",
     "specialty",
     "Specialty",
+    "Sub-Specialty",
     "SPECIALTY",
     "specialization",
     "Specialization",
@@ -117,25 +163,10 @@ function generateMetaTitle(doctorData: DoctorData): string {
   ]
   const specialty = findValueByPossibleKeys(doctorData, specialtyKeys) || "Medical Professional"
 
-  // Look for location in various possible field names
   const locationKeys = ["location", "Location", "city", "City", "country", "Country", "address", "Address"]
   const locationFull = findValueByPossibleKeys(doctorData, locationKeys) || "Kenya"
+  const location = extractLastLocationWord(locationFull)
 
-  // Extract only the last word from the location (e.g., "NAIROBI" from "P.O BOX 32268 00600 NAIROBI")
-  let location = locationFull
-
-  // If location contains multiple words, get the last word
-  if (locationFull && locationFull.includes(" ")) {
-    const locationWords = locationFull.trim().split(/\s+/)
-    location = locationWords[locationWords.length - 1]
-  }
-
-  // Replace N/A with Kenya
-  if (!location || location.toLowerCase() === "n/a") {
-    location = "Kenya"
-  }
-
-  // Combine and limit to 60 characters
   let metaTitle = `${name} - ${specialty} in ${location}`
   if (metaTitle.length > 60) {
     metaTitle = metaTitle.substring(0, 57) + "..."
@@ -145,15 +176,16 @@ function generateMetaTitle(doctorData: DoctorData): string {
 }
 
 function generateMetaDescription(doctorData: DoctorData): string {
-  // Look for name in various possible field names
-  const nameKeys = ["name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName", "fullName", "FullName"]
-  const name = findValueByPossibleKeys(doctorData, nameKeys) || ""
+  // Look for name in various possible field names, prioritizing Fullname
+  const nameKeys = ["Fullname", "fullName", "FullName", "name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName"]
+  const name = findValueByPossibleKeys(doctorData, nameKeys) || "Doctor"
 
   // Look for specialty in various possible field names
   const specialtyKeys = [
     "mainSpecialty",
     "specialty",
     "Specialty",
+    "Sub-Specialty",
     "SPECIALTY",
     "specialization",
     "Specialization",
@@ -224,9 +256,9 @@ function generateMetaDescription(doctorData: DoctorData): string {
 }
 
 function generateSlug(doctorData: DoctorData): string {
-  // Look for name in various possible field names
-  const nameKeys = ["name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName", "fullName", "FullName"]
-  const name = findValueByPossibleKeys(doctorData, nameKeys) || ""
+  // Look for name in various possible field names, prioritizing Fullname
+  const nameKeys = ["Fullname", "fullName", "FullName", "name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName"]
+  const name = findValueByPossibleKeys(doctorData, nameKeys) || "Doctor"
 
   // Look for specialty in various possible field names
   const specialtyKeys = [
