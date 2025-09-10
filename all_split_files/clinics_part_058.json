@@ -1,0 +1,5151 @@
+[
+  {
+    "name": "Lelechwet Dispensary (Kipkelion)",
+    "link": "https://kmhfr.health.go.ke/public/facilities/a677cd0f-eaa9-43da-ac67-7e57e01b646c",
+    "code": "15020",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kericho",
+    "subCounty": "N/A",
+    "ward": "Kamasian",
+    "constituency": "Kipkelion West",
+    "details": {
+      "name": "Lelechwet Dispensary (Kipkelion)",
+      "code": "15020",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Gazettement",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Ministry of Health",
+        "Owner": "Ministry of Health"
+      },
+      "Location": {
+        "County": "Kericho",
+        "Sub County": "Kipkelion West",
+        "Ward": "Kamasian",
+        "Latitude": "-0.1076",
+        "Longitude": "35.45952",
+        "Town": "-",
+        "Description": "Next to Murau Secondary School",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "4",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Morau Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/b6d00aa4-037b-448a-9259-51feb2718363"
+        },
+        {
+          "name": "Tingatela Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/7666534c-31e2-41ed-9cbd-f278879e98cc"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kimintet Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/6e6dce1a-9cba-4db4-941e-2025230fd24d",
+    "code": "14873",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Narok",
+    "subCounty": "N/A",
+    "ward": "Kimintet",
+    "constituency": "Kilgoris",
+    "details": {
+      "name": "Kimintet Dispensary",
+      "code": "14873",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Gazettement",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Ministry of Health",
+        "Owner": "Ministry of Health"
+      },
+      "Location": {
+        "County": "Narok",
+        "Sub County": "Transmara South",
+        "Ward": "Kimintet",
+        "Latitude": "-1.12275",
+        "Longitude": "35.08693",
+        "Town": "-",
+        "Description": "Kimintet Market Off Kilgoris Mpata Road",
+        "Nearest landmark": "-",
+        "Plot number": "31",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Kimintet Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/8dffe503-125d-43f1-8968-7d7e9e2e5c50"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Lelu Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/9570a672-3cba-4435-a3d6-21c651d8dedd",
+    "code": "15023",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kericho",
+    "subCounty": "N/A",
+    "ward": "Kamasian",
+    "constituency": "Kipkelion West",
+    "details": {
+      "name": "Lelu Dispensary",
+      "code": "15023",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Gazettement",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Ministry of Health",
+        "Owner": "Ministry of Health"
+      },
+      "Location": {
+        "County": "Kericho",
+        "Sub County": "Kipkelion West",
+        "Ward": "Kamasian",
+        "Latitude": "-0.13849",
+        "Longitude": "35.40885",
+        "Town": "-",
+        "Description": "Next to Lelu Market",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "4",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Bartera  community unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/acc82f9a-862f-494c-af5b-a0f7a41d472a"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kiplombe Aic Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/e9a4cfbe-9053-4237-8ec0-240ced05e432",
+    "code": "14904",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Uasin Gishu",
+    "subCounty": "N/A",
+    "ward": "Kiplombe",
+    "constituency": "Turbo",
+    "details": {
+      "name": "Kiplombe Aic Dispensary",
+      "code": "14904",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Gazettement",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Ministry of Health",
+        "Owner": "Ministry of Health"
+      },
+      "Location": {
+        "County": "Uasin Gishu",
+        "Sub County": "Turbo",
+        "Ward": "Kiplombe",
+        "Latitude": "0.62989",
+        "Longitude": "35.2189",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Ainapmoi Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/a0769cb3-b64f-464b-980d-a4c9b2bbf288"
+        },
+        {
+          "name": "Kiplombe Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/1dc8a581-80a5-4776-b420-184078c5ce07"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kipsigak Baibai Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/fce80c4f-b830-4f9a-aa87-c45c690a6782",
+    "code": "14914",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Terik",
+    "constituency": "Aldai",
+    "details": {
+      "name": "Kipsigak Baibai Dispensary",
+      "code": "14914",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Gazetted",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Ministry of Health",
+        "Owner": "Ministry of Health"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Aldai",
+        "Ward": "Terik",
+        "Latitude": "-0.00424",
+        "Longitude": "34.78087",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Kapkerer Community Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/4430bcf6-8133-46c6-9cd6-63afb59d0be4"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Tabolwa Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/1e069764-f61c-486c-9dd5-36695b92c839",
+    "code": "15696",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Sangalo/Kebulonik",
+    "constituency": "Mosop",
+    "details": {
+      "name": "Tabolwa Dispensary",
+      "code": "15696",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Gazettement",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Ministry of Health",
+        "Owner": "Ministry of Health"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Mosop",
+        "Ward": "Sangalo/Kebulonik",
+        "Latitude": "0.38635",
+        "Longitude": "34.96256",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Kamwega Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/efca0ebe-7612-4a98-b1b6-fa36d9f99e81"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Eldoret Airport Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/ece14f79-db4c-4b75-940c-207be5f3551c",
+    "code": "14434",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Uasin Gishu",
+    "subCounty": "N/A",
+    "ward": "Ngeria",
+    "constituency": "Kapseret",
+    "details": {
+      "name": "Eldoret Airport Dispensary",
+      "code": "14434",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Gazettement",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Ministry of Health",
+        "Owner": "Ministry of Health"
+      },
+      "Location": {
+        "County": "Uasin Gishu",
+        "Sub County": "Kapseret",
+        "Ward": "Ngeria",
+        "Latitude": "0.40342",
+        "Longitude": "35.22275",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kisor Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/cec90f4c-601f-4927-b5f1-6668f8663f90",
+    "code": "14945",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Uasin Gishu",
+    "subCounty": "N/A",
+    "ward": "Simat/Kapseret",
+    "constituency": "Kapseret",
+    "details": {
+      "name": "Kisor Dispensary",
+      "code": "14945",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Gazettement",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Ministry of Health",
+        "Owner": "Ministry of Health"
+      },
+      "Location": {
+        "County": "Uasin Gishu",
+        "Sub County": "Kapseret",
+        "Ward": "Simat/Kapseret",
+        "Latitude": "0.51965",
+        "Longitude": "35.20554",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Chepkongi",
+          "link": "https://kmhfr.health.go.ke/public/chu/e7bf53af-9c8c-43d0-911a-5cb07e932e6a"
+        },
+        {
+          "name": "Kaptinga Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/dd41bce7-2368-4ac5-aef1-83b347dd91aa"
+        },
+        {
+          "name": "Kisor Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/60e4013d-4c9b-4196-b9f1-b27fef79f181"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kimout Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/26859650-4cbe-491f-bb07-405dcc9500ac",
+    "code": "14870",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kericho",
+    "subCounty": "N/A",
+    "ward": "Londiani",
+    "constituency": "Kipkelion East",
+    "details": {
+      "name": "Kimout Dispensary",
+      "code": "14870",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Gazettement",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Ministry of Health",
+        "Owner": "Ministry of Health"
+      },
+      "Location": {
+        "County": "Kericho",
+        "Sub County": "Kipkelion East",
+        "Ward": "Londiani",
+        "Latitude": "-0.16874",
+        "Longitude": "35.5279",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Kapkondoo Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/202afd4b-f811-4770-98b9-2fd0d22e883b"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Mgange Dawida Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/c0c541b8-476b-4974-9561-dabd24bc7552",
+    "code": "11602",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Taita Taveta",
+    "subCounty": "N/A",
+    "ward": "Mwanda/Mgange",
+    "constituency": "Wundanyi",
+    "details": {
+      "name": "Mgange Dawida Dispensary",
+      "code": "11602",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Gazettement",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Ministry of Health",
+        "Owner": "Ministry of Health"
+      },
+      "Location": {
+        "County": "Taita Taveta",
+        "Sub County": "Wundanyi",
+        "Ward": "Mwanda/Mgange",
+        "Latitude": "-3.40138",
+        "Longitude": "38.31392",
+        "Town": "-",
+        "Description": "Near St James and Mwangea Primary school",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Mgange Dawida Communty Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/9078c38c-193a-4dff-9e8c-4d2ccefecb72"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Taito Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/ba0a6a95-1503-4dfe-a067-c1f05ecb3503",
+    "code": "15699",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Nandi Hills",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Taito Tea Dispensary",
+      "code": "15699",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Nandi Hills",
+        "Latitude": "0.09764",
+        "Longitude": "35.18882",
+        "Town": "-",
+        "Description": "Kapsabet - Nandi Hills Road. Nandi Tea Factory.",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kamkong Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/816d0298-9bc1-448d-9ee6-17f7309ae9a8",
+    "code": "14673",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Nandi Hills",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Kamkong Tea Dispensary",
+      "code": "14673",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Nandi Hills",
+        "Latitude": "0.08246",
+        "Longitude": "35.18631",
+        "Town": "-",
+        "Description": "Nandi Hills - Savani - Kaptumo",
+        "Nearest landmark": "-",
+        "Plot number": "nandi/lr 6061/1",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Koisagat Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/c73fb678-02f2-4d9f-b234-0d8705abf6a8",
+    "code": "14966",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Chepkunyuk",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Koisagat Tea Dispensary",
+      "code": "14966",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Chepkunyuk",
+        "Latitude": "0.10051",
+        "Longitude": "35.26437",
+        "Town": "-",
+        "Description": "Nandi Hills - Kipkoimet - Koisagat road",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Siret Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/96eae859-6591-4643-b8d7-c8c9c987f42c"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Chemomi Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/e8b19c40-ed8a-4758-8882-299fefaaad96",
+    "code": "14322",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Nandi Hills",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Chemomi Tea Dispensary",
+      "code": "14322",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Nandi Hills",
+        "Latitude": "0.1107",
+        "Longitude": "35.19138",
+        "Town": "-",
+        "Description": "Nandi Hills - Mugundoi - Kaptumo Road and Chemomi Tea factory.",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Chemomi",
+          "link": "https://kmhfr.health.go.ke/public/chu/15e9fe31-b48a-4324-8af8-533fe34bc41a"
+        },
+        {
+          "name": "Kosoiywo Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/27b6b616-e8d8-469d-af9d-dd1dbf82605f"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Chagaik Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/32e0fcc2-b1a7-4cf9-ae7b-e2c151964040",
+    "code": "16475",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kericho",
+    "subCounty": "N/A",
+    "ward": "Chepseon",
+    "constituency": "Kipkelion East",
+    "details": {
+      "name": "Chagaik Dispensary",
+      "code": "16475",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Kericho",
+        "Sub County": "Kipkelion East",
+        "Ward": "Chepseon",
+        "Latitude": "-0.33965",
+        "Longitude": "35.34365",
+        "Town": "-",
+        "Description": "Next to Chagaik Tea Factory",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Mau Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/e7f12416-3ec1-4fd5-a12f-abd5112ef25d",
+    "code": "15158",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kericho",
+    "subCounty": "N/A",
+    "ward": "Chepseon",
+    "constituency": "Kipkelion East",
+    "details": {
+      "name": "Mau Tea Dispensary",
+      "code": "15158",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Kericho",
+        "Sub County": "Kipkelion East",
+        "Ward": "Chepseon",
+        "Latitude": "-0.32416",
+        "Longitude": "35.36579",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "4",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kipkoigen Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/fe451cb3-66a2-4099-a1df-b60e029fb9d8",
+    "code": "14900",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Chepkunyuk",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Kipkoigen Tea Dispensary",
+      "code": "14900",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Chepkunyuk",
+        "Latitude": "0.12032",
+        "Longitude": "35.2384",
+        "Town": "-",
+        "Description": "Off Nandi Hills - Lessos Road.",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Mogobich Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/0ddfe245-d92a-4b65-8cf4-520fc9df678d"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Tinderet Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/71c76972-09cd-4421-b507-d1cafab194ad",
+    "code": "15726",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Tinderet",
+    "constituency": "Tinderet",
+    "details": {
+      "name": "Tinderet Tea Dispensary",
+      "code": "15726",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Tinderet",
+        "Ward": "Tinderet",
+        "Latitude": "-0.03796",
+        "Longitude": "35.34557",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kaisugu Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/a1f20727-cdaa-488a-9203-439820dcfb64",
+    "code": "14647",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kericho",
+    "subCounty": "N/A",
+    "ward": "Chepseon",
+    "constituency": "Kipkelion East",
+    "details": {
+      "name": "Kaisugu Dispensary",
+      "code": "14647",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Kericho",
+        "Sub County": "Kipkelion East",
+        "Ward": "Chepseon",
+        "Latitude": "-0.31507",
+        "Longitude": "35.37531",
+        "Town": "-",
+        "Description": "Next to Kaisugu Factory",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Siret Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/3c646825-96ae-408b-9123-f57714aa565a",
+    "code": "15591",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Chepkunyuk",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Siret Tea Dispensary",
+      "code": "15591",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Chepkunyuk",
+        "Latitude": "0.07912",
+        "Longitude": "35.25655",
+        "Town": "-",
+        "Description": "Nandi Hills - Lessos Road. Siret Tea Factory.",
+        "Nearest landmark": "-",
+        "Plot number": "nandi/siret/lr 1475",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Sitoi Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/d2898bdc-f2e0-4268-aef6-9de34728b217",
+    "code": "15597",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Nandi Hills",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Sitoi Tea Dispensary",
+      "code": "15597",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Nandi Hills",
+        "Latitude": "0.0929",
+        "Longitude": "35.18068",
+        "Town": "-",
+        "Description": "Off Nandi Hills - Mugundoi Road.",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Chemomi Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/056a963f-3ffc-4861-adf1-a013d91e28a5"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Ketepa Dispensary (Kericho)",
+    "link": "https://kmhfr.health.go.ke/public/facilities/07ccf150-3a03-4656-a27e-dc7b781bbd4a",
+    "code": "14842",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kericho",
+    "subCounty": "N/A",
+    "ward": "Kapkugerwet",
+    "constituency": "Ainamoi",
+    "details": {
+      "name": "Ketepa Dispensary (Kericho)",
+      "code": "14842",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Institution Academic"
+      },
+      "Location": {
+        "County": "Kericho",
+        "Sub County": "Ainamoi",
+        "Ward": "Kapkugerwet",
+        "Latitude": "-0.33781",
+        "Longitude": "35.32292",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Ogirgir Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/5a5dc339-2cf3-434e-9b1d-887a853fb5de",
+    "code": "15383",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Ol'lessos",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Ogirgir Tea Dispensary (Nandi East)",
+      "code": "15383",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Ol'lessos",
+        "Latitude": "0.11255",
+        "Longitude": "35.25752",
+        "Town": "-",
+        "Description": "Off Kapsabet - Lessos Road.",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kapchorua Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/280e5740-4756-4d06-a9d1-6fd51fbbb34e",
+    "code": "14696",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Kapchorua",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Kapchorua Tea Dispensary",
+      "code": "14696",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Kapchorua",
+        "Latitude": "0.10114",
+        "Longitude": "35.28",
+        "Town": "-",
+        "Description": "Off Nandi Hills - Lessos Road",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Kapchorua B Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/55e89fc1-49d9-4295-b7d8-f8350b81999a"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Chemartin Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/308c49c2-d2c6-4093-82b5-b2b3bf209442",
+    "code": "14313",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Chepkunyuk",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Chemartin Tea Dispensary",
+      "code": "14313",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Chepkunyuk",
+        "Latitude": "0.19128",
+        "Longitude": "35.22356",
+        "Town": "-",
+        "Description": "Nandi Hills - Siret Road",
+        "Nearest landmark": "-",
+        "Plot number": "nandi/nandi hills/6085/8",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Khartoum Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/06797f2e-0d63-4b2e-b669-eb975548856a",
+    "code": "14844",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Chepkunyuk",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Khartoum Tea Dispensary",
+      "code": "14844",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Chepkunyuk",
+        "Latitude": "0.11973",
+        "Longitude": "35.22457",
+        "Town": "-",
+        "Description": "Nandi Hills - Hemaki Road Kapsumbeiwa tea factory",
+        "Nearest landmark": "-",
+        "Plot number": "lr 13048",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Tartar Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/7f0c1f0d-3d50-4e22-82b1-78e27f9f3d0a"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kibwari Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/63f52ce7-a3f5-48cb-80d7-a48f3be39784",
+    "code": "14858",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Nandi Hills",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Kibwari Tea Dispensary",
+      "code": "14858",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Nandi Hills",
+        "Latitude": "0.08391",
+        "Longitude": "35.19834",
+        "Town": "-",
+        "Description": "Nandi Hills - Savani - Kaptumo road",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kaboswa Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/f0ddd619-b70a-4e3f-a083-5d11c524ecf0",
+    "code": "14629",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Chepkunyuk",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Kaboswa Tea Dispensary",
+      "code": "14629",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Chepkunyuk",
+        "Latitude": "0.10455",
+        "Longitude": "35.22457",
+        "Town": "-",
+        "Description": "Nandi Hills - Hemaki Road",
+        "Nearest landmark": "-",
+        "Plot number": "lr 10729/1",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kapsiwon Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/ff5ca067-f3fe-405a-a373-52956ee9812d",
+    "code": "14763",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Nandi Hills",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Kapsiwon Tea Dispensary",
+      "code": "14763",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Nandi Hills",
+        "Latitude": "0.11679",
+        "Longitude": "35.18512",
+        "Town": "-",
+        "Description": "Nandi Hills - Kapsabet Road.",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kipkoimet Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/740cff61-7695-448c-99d1-dcf7eac0134a",
+    "code": "14901",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Chepkunyuk",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Kipkoimet Tea Dispensary",
+      "code": "14901",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Chepkunyuk",
+        "Latitude": "0.11973",
+        "Longitude": "35.23165",
+        "Town": "-",
+        "Description": "Off Nandi Hills - Lessos Road and Kipkoimet tea factory.",
+        "Nearest landmark": "-",
+        "Plot number": "lr 11607",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kapsikak Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/2681d674-9054-43a7-a9e7-71203b3ce193",
+    "code": "14917",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Nandi Hills",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Kapsikak Tea Dispensary",
+      "code": "14917",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Nandi Hills",
+        "Latitude": "0.12381",
+        "Longitude": "35.18699",
+        "Town": "-",
+        "Description": "Nandi Hills - Mugundoi Road",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kepchomo Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/fee8b186-5bce-44d0-81c2-6152113a8892",
+    "code": "14829",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Chepkunyuk",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Kepchomo Tea Dispensary (Nandi East)",
+      "code": "14829",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Chepkunyuk",
+        "Latitude": "0.19556",
+        "Longitude": "35.2408",
+        "Town": "-",
+        "Description": "Nandi Hills - Lessos Road and near Kepchomo Tea Factocry.",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kaprachoge Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/2b5c4055-66c0-4574-9a51-fcdff8b64315",
+    "code": "14748",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Chepkunyuk",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Kaprachoge Tea Dispensary",
+      "code": "14748",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Chepkunyuk",
+        "Latitude": "0.18056",
+        "Longitude": "35.24362",
+        "Town": "-",
+        "Description": "Off Nandi Hills - Lessos Road and within Kaprachoge Tea Estate.",
+        "Nearest landmark": "-",
+        "Plot number": "nandi/siret/ lr 9457/1",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kibabet Tea Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/648e3925-2914-4916-aad0-cfb1cc0c836e",
+    "code": "14847",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nandi",
+    "subCounty": "N/A",
+    "ward": "Chepkunyuk",
+    "constituency": "Nandi Hills",
+    "details": {
+      "name": "Kibabet Tea Dispensary",
+      "code": "14847",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nandi",
+        "Sub County": "Nandi Hills",
+        "Ward": "Chepkunyuk",
+        "Latitude": "0.11681",
+        "Longitude": "35.22987",
+        "Town": "-",
+        "Description": "Off Nandi Hills - Lessos Road at Chepkunyuk centre.",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Makwasinyi Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/89585118-222d-4f63-8e19-2bf99bc4d226",
+    "code": "11552",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Taita Taveta",
+    "subCounty": "N/A",
+    "ward": "Kasigau",
+    "constituency": "Voi",
+    "details": {
+      "name": "Makwasinyi Dispensary",
+      "code": "11552",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Gazettement",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Ministry of Health",
+        "Owner": "Ministry of Health"
+      },
+      "Location": {
+        "County": "Taita Taveta",
+        "Sub County": "Voi",
+        "Ward": "Kasigau",
+        "Latitude": "-3.81318",
+        "Longitude": "38.68151",
+        "Town": "-",
+        "Description": "Near mkwasinyi primary school",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Makwasinyi Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/59da770f-2d61-4154-86fb-2ac4798c885b"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Jamji Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/a5d68ec7-181a-46c5-af2f-3e5429299d1c",
+    "code": "14592",
+    "type": "Medical Clinic",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kericho",
+    "subCounty": "N/A",
+    "ward": "Chaik",
+    "constituency": "Belgut",
+    "details": {
+      "name": "Jamji Dispensary",
+      "code": "14592",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Medical Clinic",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Institution Academic"
+      },
+      "Location": {
+        "County": "Kericho",
+        "Sub County": "Belgut",
+        "Ward": "Chaik",
+        "Latitude": "-0.47254",
+        "Longitude": "35.18607",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Chemase Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/c8937cd9-16d5-4cee-94b8-318e06b3ecc5",
+    "code": "14314",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kericho",
+    "subCounty": "N/A",
+    "ward": "Chaik",
+    "constituency": "Belgut",
+    "details": {
+      "name": "Chemase Dispensary",
+      "code": "14314",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Institution Academic"
+      },
+      "Location": {
+        "County": "Kericho",
+        "Sub County": "Belgut",
+        "Ward": "Chaik",
+        "Latitude": "-0.41526",
+        "Longitude": "35.30371",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kerenga Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/477f0758-6262-4782-9850-2cc0b457ff63",
+    "code": "14830",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kericho",
+    "subCounty": "N/A",
+    "ward": "Chaik",
+    "constituency": "Belgut",
+    "details": {
+      "name": "Kerenga Dispensary",
+      "code": "14830",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Institution Academic"
+      },
+      "Location": {
+        "County": "Kericho",
+        "Sub County": "Belgut",
+        "Ward": "Chaik",
+        "Latitude": "-0.40732",
+        "Longitude": "35.23049",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "JFK Engineering Disp",
+    "link": "https://kmhfr.health.go.ke/public/facilities/4a381454-973c-4535-8b28-10dc09580424",
+    "code": "14596",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kericho",
+    "subCounty": "N/A",
+    "ward": "Chaik",
+    "constituency": "Belgut",
+    "details": {
+      "name": "Jfk Engineering Dispensary",
+      "code": "14596",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Institution Academic"
+      },
+      "Location": {
+        "County": "Kericho",
+        "Sub County": "Belgut",
+        "Ward": "Chaik",
+        "Latitude": "-0.41415",
+        "Longitude": "35.18607",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Tea Resaerch Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/39e010cf-4591-4fa1-acc6-00e0a22d9480",
+    "code": "15711",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kericho",
+    "subCounty": "N/A",
+    "ward": "Chepseon",
+    "constituency": "Kipkelion East",
+    "details": {
+      "name": "Tea Resaerch Dispensary",
+      "code": "15711",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Institution Academic"
+      },
+      "Location": {
+        "County": "Kericho",
+        "Sub County": "Kipkelion East",
+        "Ward": "Chepseon",
+        "Latitude": "-0.354786",
+        "Longitude": "35.3893",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Samburu Lodge Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/ebc42a5e-724c-447a-a8d8-f3b8cf871dd8",
+    "code": "15524",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Samburu",
+    "subCounty": "N/A",
+    "ward": "Wamba West",
+    "constituency": "Samburu East",
+    "details": {
+      "name": "Samburu Lodge Dispensary",
+      "code": "15524",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Institution Academic"
+      },
+      "Location": {
+        "County": "Samburu",
+        "Sub County": "Samburu East",
+        "Ward": "Wamba West",
+        "Latitude": "0.617801",
+        "Longitude": "37.4114",
+        "Town": "-",
+        "Description": "It is the property of Wilderness lodges and safari situated within samburu game reserve approx 15 kilometers from archers post",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "4",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Our Lady of Lords Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/47721ee1-6839-43b0-bb20-9db918bd349d",
+    "code": "15452",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Uasin Gishu",
+    "subCounty": "N/A",
+    "ward": "Tapsagoi",
+    "constituency": "Turbo",
+    "details": {
+      "name": "Our Lady Of Lords Dispensary",
+      "code": "15452",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Kenya Episcopal Conference-Catholic Secretariat"
+      },
+      "Location": {
+        "County": "Uasin Gishu",
+        "Sub County": "Turbo",
+        "Ward": "Tapsagoi",
+        "Latitude": "0.58865",
+        "Longitude": "35.04951",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Sipili Catholic Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/6d7fd4ed-255e-49d6-8be8-3b253a43f6f7",
+    "code": "15588",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Laikipia",
+    "subCounty": "N/A",
+    "ward": "Ol-moran",
+    "constituency": "Laikipia West",
+    "details": {
+      "name": "Sipili Catholic Dispensary",
+      "code": "15588",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Kenya Episcopal Conference-Catholic Secretariat"
+      },
+      "Location": {
+        "County": "Laikipia",
+        "Sub County": "Laikipia West",
+        "Ward": "Ol-moran",
+        "Latitude": "0.40978",
+        "Longitude": "36.3737",
+        "Town": "-",
+        "Description": "Near Sipili Catholic Church",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "2",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Ngarua Catholic Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/5985e9ee-7823-45b7-a02b-ef96a5e06044",
+    "code": "15338",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Laikipia",
+    "subCounty": "N/A",
+    "ward": "Githiga",
+    "constituency": "Laikipia West",
+    "details": {
+      "name": "Ngarua Catholic Dispensary",
+      "code": "15338",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Kenya Episcopal Conference-Catholic Secretariat"
+      },
+      "Location": {
+        "County": "Laikipia",
+        "Sub County": "Laikipia West",
+        "Ward": "Githiga",
+        "Latitude": "0.4115",
+        "Longitude": "36.3196",
+        "Town": "-",
+        "Description": "Ngarua catholic Dispensary is situated 100 metres from the tarmac junction of Kinamba, Sipili, Olmoran",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "2",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Sererit Catholic Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/ebc4c5e1-f3f7-48c2-937b-9e450f8e1485",
+    "code": "15548",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Samburu",
+    "subCounty": "N/A",
+    "ward": "Ndoto",
+    "constituency": "Samburu North",
+    "details": {
+      "name": "Sererit Catholic Dispensary",
+      "code": "15548",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Open weekends": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Kenya Episcopal Conference-Catholic Secretariat"
+      },
+      "Location": {
+        "County": "Samburu",
+        "Sub County": "Samburu North",
+        "Ward": "Ndoto",
+        "Latitude": "1.663447",
+        "Longitude": "37.236664",
+        "Town": "-",
+        "Description": "Baragoi Latakeny road, past Loikumkum village. situated at a village called Lekerri",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "4",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Sererit Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/9239a9f8-78ca-45e0-b8e4-49436bb06d18"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Baragoi Catholic Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/57d99381-0696-4464-b499-c6646a94ada5",
+    "code": "14227",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Samburu",
+    "subCounty": "N/A",
+    "ward": "El-barta",
+    "constituency": "Samburu North",
+    "details": {
+      "name": "Baragoi Catholic Dispensary",
+      "code": "14227",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Kenya Episcopal Conference-Catholic Secretariat"
+      },
+      "Location": {
+        "County": "Samburu",
+        "Sub County": "Samburu North",
+        "Ward": "El-barta",
+        "Latitude": "1.73792",
+        "Longitude": "36.8579",
+        "Town": "-",
+        "Description": "Baragoi Catholic Mission- Next to Baragoi Catholic Church",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "1",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Hospice Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/3d4693cd-cf13-43bd-970f-5df69a18776c",
+    "code": "16352",
+    "type": "Medical Clinic",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Uasin Gishu",
+    "subCounty": "N/A",
+    "ward": "Kapsoya",
+    "constituency": "Ainabkoi",
+    "details": {
+      "name": "Hospice Dispensary",
+      "code": "16352",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Medical Clinic",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Non-Governmental Organizations",
+        "Owner": "Non-Governmental Organizations"
+      },
+      "Location": {
+        "County": "Uasin Gishu",
+        "Sub County": "Ainabkoi",
+        "Ward": "Kapsoya",
+        "Latitude": "0.516389",
+        "Longitude": "35.3205",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "P O M Dipensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/ed68ee73-633a-4994-962c-534d53320ccb",
+    "code": "15454",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "West Pokot",
+    "subCounty": "N/A",
+    "ward": "Kapenguria",
+    "constituency": "Kapenguria",
+    "details": {
+      "name": "P O M Dispensary",
+      "code": "15454",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Non-Governmental Organizations",
+        "Owner": "Non-Governmental Organizations"
+      },
+      "Location": {
+        "County": "West Pokot",
+        "Sub County": "West Pokot",
+        "Ward": "Kapenguria",
+        "Latitude": "1.25465",
+        "Longitude": "35.0925",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Tata Hannah (African Christian Churches and School",
+    "link": "https://kmhfr.health.go.ke/public/facilities/83fee650-f5ee-4a10-9978-be788c2e1f79",
+    "code": "11086",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Muranga",
+    "subCounty": "N/A",
+    "ward": "Kangari",
+    "constituency": "Kigumo",
+    "details": {
+      "name": "Tata Hannah (African Christian Churches And Schools) Dispensary",
+      "code": "11086",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Christian Health Association of Kenya"
+      },
+      "Location": {
+        "County": "Muranga",
+        "Sub County": "Kigumo",
+        "Ward": "Kangari",
+        "Latitude": "-0.77503",
+        "Longitude": "36.88679",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Kanyagia Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/6799ea01-614c-4c9a-942b-83fb7c30bcd7"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Patrician Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/1bbd95d2-c0c3-4f17-9c18-31a3d536de54",
+    "code": "16343",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Uasin Gishu",
+    "subCounty": "N/A",
+    "ward": "Ngeria",
+    "constituency": "Kapseret",
+    "details": {
+      "name": "Patrician Dispensary",
+      "code": "16343",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Other Faith Based"
+      },
+      "Location": {
+        "County": "Uasin Gishu",
+        "Sub County": "Kapseret",
+        "Ward": "Ngeria",
+        "Latitude": "0.43404",
+        "Longitude": "35.26143",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "D-block Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/aa5d6a1d-4814-44d6-bc83-5f21ad9763e5"
+        },
+        {
+          "name": "Jasho Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/7f16ac11-8734-49bf-9931-72f760dbb6bb"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Mary Finch Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/16a66e3f-524e-4c44-b655-79fe41788202",
+    "code": "15146",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kericho",
+    "subCounty": "N/A",
+    "ward": "Kedowa/Kimugul",
+    "constituency": "Kipkelion East",
+    "details": {
+      "name": "Mary Finch Dispensary",
+      "code": "15146",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Other Faith Based"
+      },
+      "Location": {
+        "County": "Kericho",
+        "Sub County": "Kipkelion East",
+        "Ward": "Kedowa/Kimugul",
+        "Latitude": "-0.1658",
+        "Longitude": "35.58459",
+        "Town": "-",
+        "Description": "A Long Londiani -  Masaita Road",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "4",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Wusi-Wutesia (Ack) Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/8ad914c6-c20a-46ea-8148-13448ee9272e",
+    "code": "11909",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Taita Taveta",
+    "subCounty": "N/A",
+    "ward": "Wusi/Kishamba",
+    "constituency": "Mwatate",
+    "details": {
+      "name": "Wusi-Wutesia (Ack) Dispensary",
+      "code": "11909",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Christian Health Association of Kenya"
+      },
+      "Location": {
+        "County": "Taita Taveta",
+        "Sub County": "Mwatate",
+        "Ward": "Wusi/Kishamba",
+        "Latitude": "-3.45531",
+        "Longitude": "38.3494",
+        "Town": "-",
+        "Description": "near Murray girls high school",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Mruru Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/6e292989-04a6-4224-9600-ed080ebd39bb"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Rumangao Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/575737a5-0132-406c-b1bb-271e6972ae49",
+    "code": "11760",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Taita Taveta",
+    "subCounty": "N/A",
+    "ward": "Sagala",
+    "constituency": "Voi",
+    "details": {
+      "name": "Rumangao Dispensary",
+      "code": "11760",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Christian Health Association of Kenya"
+      },
+      "Location": {
+        "County": "Taita Taveta",
+        "Sub County": "Voi",
+        "Ward": "Sagala",
+        "Latitude": "-3.49341",
+        "Longitude": "38.58219",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "3681",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Rumangao Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/e1c9c1f0-f2c5-445b-a016-89d1e8a8c1c0"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Holy Rosary Ikinu Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/16bf058b-fffb-4759-87a3-5a728a3ab2f1",
+    "code": "10322",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kiambu",
+    "subCounty": "N/A",
+    "ward": "Ikinu",
+    "constituency": "Githunguri",
+    "details": {
+      "name": "Holy Rosary Ikinu Dispensary",
+      "code": "10322",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Other Faith Based"
+      },
+      "Location": {
+        "County": "Kiambu",
+        "Sub County": "Githunguri",
+        "Ward": "Ikinu",
+        "Latitude": "-1.09918",
+        "Longitude": "36.79877",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Tuina Dipensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/532c0862-fbaa-4ffd-a172-de4771501ece",
+    "code": "15743",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "West Pokot",
+    "subCounty": "N/A",
+    "ward": "Mnagei",
+    "constituency": "Kapenguria",
+    "details": {
+      "name": "Tuina Dispensary",
+      "code": "15743",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Other Faith Based"
+      },
+      "Location": {
+        "County": "West Pokot",
+        "Sub County": "West Pokot",
+        "Ward": "Mnagei",
+        "Latitude": "1.25176",
+        "Longitude": "35.0897",
+        "Town": "-",
+        "Description": "Makutano",
+        "Nearest landmark": "MAKUTANO PRIMARY SCHOOL",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Lityei Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/d22b0cea-a114-4c94-a45a-efbce58c8e5f"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Sacred Heart Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/d5fad4e5-730f-4141-af11-0454e3c97136",
+    "code": "10988",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kiambu",
+    "subCounty": "N/A",
+    "ward": "Muchatha",
+    "constituency": "Kiambaa",
+    "details": {
+      "name": "Sacred Heart Dispensary",
+      "code": "10988",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Other Faith Based"
+      },
+      "Location": {
+        "County": "Kiambu",
+        "Sub County": "Kiambaa",
+        "Ward": "Muchatha",
+        "Latitude": "-1.18784",
+        "Longitude": "36.76598",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Divine Mercy Eldoro (Catholic) Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/1aea552b-14e5-4a35-9cb2-ef0934ac6a4e",
+    "code": "11365",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Taita Taveta",
+    "subCounty": "N/A",
+    "ward": "Mboghoni",
+    "constituency": "Taveta",
+    "details": {
+      "name": "Divine Mercy Eldoro (Catholic) Dispensary",
+      "code": "11365",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Other Faith Based"
+      },
+      "Location": {
+        "County": "Taita Taveta",
+        "Sub County": "Taveta",
+        "Ward": "Mboghoni",
+        "Latitude": "-3.4793",
+        "Longitude": "37.68301",
+        "Town": "-",
+        "Description": "Eldoro dispensary is the only Faith based facility in Taveta District owaned by the catholic church. It is about 2Km from Kimorigo dispensary",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Daba (Aic) Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/339a2407-e227-4184-b5f9-4231f3ea7f9f",
+    "code": "11296",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Tana River",
+    "subCounty": "N/A",
+    "ward": "Wayu",
+    "constituency": "Galole",
+    "details": {
+      "name": "Daba (Aic) Dispensary",
+      "code": "11296",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Christian Health Association of Kenya"
+      },
+      "Location": {
+        "County": "Tana River",
+        "Sub County": "Galole",
+        "Ward": "Wayu",
+        "Latitude": "-1.57",
+        "Longitude": "39.45",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "1",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Daba Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/f93bf0ac-daf4-437e-9d7b-b507ba43a5b6"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Gathiruini (Pcea) Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/2b2e4278-a20b-4504-9c55-4bd37e1784df",
+    "code": "10219",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kiambu",
+    "subCounty": "N/A",
+    "ward": "Komothai",
+    "constituency": "Githunguri",
+    "details": {
+      "name": "Gathiruini (Pcea) Dispensary",
+      "code": "10219",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Christian Health Association of Kenya"
+      },
+      "Location": {
+        "County": "Kiambu",
+        "Sub County": "Githunguri",
+        "Ward": "Komothai",
+        "Latitude": "-1.04995",
+        "Longitude": "36.87118",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kambui (PCEA) Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/68e54eef-7e05-417a-a96c-41646c618adb",
+    "code": "10446",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kiambu",
+    "subCounty": "N/A",
+    "ward": "Ngewa",
+    "constituency": "Githunguri",
+    "details": {
+      "name": "Kambui (PCEA) Dispensary",
+      "code": "10446",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Christian Health Association of Kenya"
+      },
+      "Location": {
+        "County": "Kiambu",
+        "Sub County": "Githunguri",
+        "Ward": "Ngewa",
+        "Latitude": "-1.101",
+        "Longitude": "36.86279",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Marynoll Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/69c520d5-d49b-4223-990c-6adee33d0210",
+    "code": "11574",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Tana River",
+    "subCounty": "N/A",
+    "ward": "Bura",
+    "constituency": "Bura",
+    "details": {
+      "name": "Marynoll Dispensary",
+      "code": "11574",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Other Faith Based"
+      },
+      "Location": {
+        "County": "Tana River",
+        "Sub County": "Bura",
+        "Ward": "Bura",
+        "Latitude": "-",
+        "Longitude": "-",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "1.General Outpatient",
+          "category": "",
+          "status": "Active",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ]
+    }
+  },
+  {
+    "name": "Quadalupe Sisters Roret",
+    "link": "https://kmhfr.health.go.ke/public/facilities/0fd40fc6-ce9e-415e-8966-8fbc765fc33e",
+    "code": "15475",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Kericho",
+    "subCounty": "N/A",
+    "ward": "Kisiara",
+    "constituency": "Bureti",
+    "details": {
+      "name": "Quadalupe Sisters Roret",
+      "code": "15475",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Kenya Episcopal Conference-Catholic Secretariat"
+      },
+      "Location": {
+        "County": "Kericho",
+        "Sub County": "Bureti",
+        "Ward": "Kisiara",
+        "Latitude": "-0.50251",
+        "Longitude": "35.10005",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "6",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Bindura Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/53dc1206-ad4d-4dff-81b5-7c5feba44a41",
+    "code": "16338",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Uasin Gishu",
+    "subCounty": "N/A",
+    "ward": "Tulwet/Chuiyat",
+    "constituency": "Kesses",
+    "details": {
+      "name": "Bindura Dispensary",
+      "code": "16338",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Other Faith Based"
+      },
+      "Location": {
+        "County": "Uasin Gishu",
+        "Sub County": "Kesses",
+        "Ward": "Tulwet/Chuiyat",
+        "Latitude": "0.27335",
+        "Longitude": "35.36305",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "4",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Mogotio Plantation Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/b168ec46-0ef6-4104-b3af-6b5d569631e0",
+    "code": "15199",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Nakuru",
+    "subCounty": "N/A",
+    "ward": "Soin",
+    "constituency": "Rongai",
+    "details": {
+      "name": "Mogotio Plantation Dispensary",
+      "code": "15199",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Company"
+      },
+      "Location": {
+        "County": "Nakuru",
+        "Sub County": "Rongai",
+        "Ward": "Soin",
+        "Latitude": "-0.05233",
+        "Longitude": "35.96368",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "sisal plantation farm",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 143,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Chukura Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/a22b84b4-eb31-4bc9-8b74-d70989f58d23",
+    "code": "14390",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Uasin Gishu",
+    "subCounty": "N/A",
+    "ward": "Kapkures",
+    "constituency": "Soy",
+    "details": {
+      "name": "Chukura Dispensary",
+      "code": "14390",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Gazettement",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Ministry of Health",
+        "Owner": "Ministry of Health"
+      },
+      "Location": {
+        "County": "Uasin Gishu",
+        "Sub County": "Soy",
+        "Ward": "Kapkures",
+        "Latitude": "0.84371",
+        "Longitude": "35.14826",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Chukura Community Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/c38ba9c7-ffff-4342-93b1-de29685a9270"
+        },
+        {
+          "name": "Chukura Community Health Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/dc579c1d-9a71-4583-b40d-38ab0747ee46"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Titila (AIC) Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/01e43665-fadc-4a2c-b204-943fa616e810",
+    "code": "11852",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Tana River",
+    "subCounty": "N/A",
+    "ward": "Wayu",
+    "constituency": "Galole",
+    "details": {
+      "name": "Titila (AIC) Dispensary",
+      "code": "11852",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Faith Based Organization",
+        "Owner": "Christian Health Association of Kenya"
+      },
+      "Location": {
+        "County": "Tana River",
+        "Sub County": "Galole",
+        "Ward": "Wayu",
+        "Latitude": "-1.72219",
+        "Longitude": "39.24528",
+        "Town": "-",
+        "Description": "-",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "1",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": ""
+      },
+      "CommunityUnits": [
+        {
+          "name": "Titila (AIC) Community Unit",
+          "link": "https://kmhfr.health.go.ke/public/chu/9621e7a3-8527-4c5c-96f0-d70a84438f79"
+        }
+      ],
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  },
+  {
+    "name": "Kichwa Tembo Dispensary",
+    "link": "https://kmhfr.health.go.ke/public/facilities/2ee77d02-8375-4975-b32c-620b48ae564e",
+    "code": "14859",
+    "type": "Dispensary",
+    "level": "Level 2",
+    "operationalStatus": "Operational",
+    "county": "Narok",
+    "subCounty": "N/A",
+    "ward": "Kimintet",
+    "constituency": "Kilgoris",
+    "details": {
+      "name": "Kichwa Tembo Dispensary",
+      "code": "14859",
+      "kephLevel": "KEPH Level 2",
+      "operationalStatus": "Operational",
+      "regulatoryBody": "",
+      "BasicDetails": {
+        "Facility Type": "Dispensary",
+        "Keph Level": "Level 2",
+        "KHIS reporting": "Yes",
+        "Open 24 hours": "Yes",
+        "Published": "Yes"
+      },
+      "Regulation": {
+        "Date established": "17 March 2016",
+        "Date requested": "31 October 2009",
+        "Date approved": "12 February 2016",
+        "Regulation status": "Pending Registration",
+        "Regulating body": "-",
+        "Registration number": "-",
+        "License number": "-",
+        "Category": "Private Practice",
+        "Owner": "Private Practice - Private Institution Academic"
+      },
+      "Location": {
+        "County": "Narok",
+        "Sub County": "Transmara South",
+        "Ward": "Kimintet",
+        "Latitude": "-1.24963",
+        "Longitude": "35.01074",
+        "Town": "-",
+        "Description": "Kawai Primary School",
+        "Nearest landmark": "-",
+        "Plot number": "-",
+        "Total In-patient beds": "0",
+        "General In-patient beds": "0",
+        "Cots": "0",
+        "Maternity beds": "0",
+        "Emergency casualty beds": "0",
+        "Intensive Care Unit beds": "0",
+        "High Dependency Unit beds": "0",
+        "Isolation beds": "0"
+      },
+      "SurgicalTheatres": {
+        "General theatres": "0",
+        "Maternity theatres": "0",
+        "Name": "-"
+      },
+      "Services": [
+        {
+          "name": "",
+          "category": "",
+          "status": "",
+          "averageRating": "",
+          "numberOfRatings": ""
+        }
+      ],
+      "coordinates": {
+        "x": 142,
+        "y": 325
+      }
+    }
+  }
+]

@@ -16,7 +16,7 @@ export interface DoctorData {
   about?: string
   "Reg No"?: string
   Discipline?: string
-  [key: string]: string | undefined
+  [key: string]: any
 }
 
 export interface GeneratedContent {
@@ -32,6 +32,6 @@ export interface GeneratedContent {
 
 export interface JsonData {
   headers: string[]
-  sampleData: Record<string, string>
+  sampleData: Record<string, any>
   rawData: DoctorData[]
 }

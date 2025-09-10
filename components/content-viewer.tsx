@@ -20,6 +20,14 @@ interface ContentViewerProps {
 export function ContentViewer({ content, title, metaTitle, metaDescription, slug, focusKeyword }: ContentViewerProps) {
   const [isOpen, setIsOpen] = useState(false)
 
+  // Ensure all props are strings to prevent React child errors
+  const safeContent = typeof content === 'string' ? content : String(content || '')
+  const safeTitle = typeof title === 'string' ? title : String(title || '')
+  const safeMetaTitle = typeof metaTitle === 'string' ? metaTitle : String(metaTitle || '')
+  const safeMetaDescription = typeof metaDescription === 'string' ? metaDescription : String(metaDescription || '')
+  const safeSlug = typeof slug === 'string' ? slug : String(slug || '')
+  const safeFocusKeyword = typeof focusKeyword === 'string' ? focusKeyword : String(focusKeyword || '')
+
   // Function to sanitize HTML content while preserving allowed tags
   const sanitizeContent = (html: string) => {
     // Configure DOMPurify to only allow specific tags and attributes
@@ -56,35 +64,35 @@ export function ContentViewer({ content, title, metaTitle, metaDescription, slug
       </DialogTrigger>
       <DialogContent className="max-w-4xl max-h-[80vh] overflow-hidden">
         <DialogHeader>
-          <DialogTitle>{title || "Generated Content"}</DialogTitle>
+          <DialogTitle>{safeTitle || "Generated Content"}</DialogTitle>
           <DialogDescription>View the complete generated content with all formatting and links.</DialogDescription>
         </DialogHeader>
 
         {/* Add SEO metadata section */}
-        {(metaTitle || metaDescription || slug || focusKeyword) && (
+        {(safeMetaTitle || safeMetaDescription || safeSlug || safeFocusKeyword) && (
           <div className="mb-4 p-3 border rounded-md bg-slate-50">
             <h3 className="text-sm font-medium mb-2">SEO Metadata</h3>
             <div className="space-y-2 text-sm">
-              {metaTitle && (
+              {safeMetaTitle && (
                 <div>
-                  <span className="font-semibold">Meta Title:</span> {metaTitle}
-                  <span className="text-xs text-muted-foreground ml-2">({metaTitle.length} chars)</span>
+                  <span className="font-semibold">Meta Title:</span> {safeMetaTitle}
+                  <span className="text-xs text-muted-foreground ml-2">({safeMetaTitle.length} chars)</span>
                 </div>
               )}
-              {metaDescription && (
+              {safeMetaDescription && (
                 <div>
-                  <span className="font-semibold">Meta Description:</span> {metaDescription}
-                  <span className="text-xs text-muted-foreground ml-2">({metaDescription.length} chars)</span>
+                  <span className="font-semibold">Meta Description:</span> {safeMetaDescription}
+                  <span className="text-xs text-muted-foreground ml-2">({safeMetaDescription.length} chars)</span>
                 </div>
               )}
-              {slug && (
+              {safeSlug && (
                 <div>
-                  <span className="font-semibold">Slug:</span> {slug}
+                  <span className="font-semibold">Slug:</span> {safeSlug}
                 </div>
               )}
-              {focusKeyword && (
+              {safeFocusKeyword && (
                 <div>
-                  <span className="font-semibold">Focus Keyword:</span> {focusKeyword}
+                  <span className="font-semibold">Focus Keyword:</span> {safeFocusKeyword}
                 </div>
               )}
             </div>
@@ -95,7 +103,7 @@ export function ContentViewer({ content, title, metaTitle, metaDescription, slug
           <div
             className="prose prose-slate max-w-none dark:prose-invert prose-headings:mt-4 prose-headings:mb-2 prose-p:my-2 prose-strong:text-primary prose-h2:text-2xl prose-h3:text-xl prose-h4:text-lg prose-a:text-blue-600 hover:prose-a:text-blue-500"
             dangerouslySetInnerHTML={{
-              __html: processContent(content),
+              __html: processContent(safeContent),
             }}
           />
         </div>

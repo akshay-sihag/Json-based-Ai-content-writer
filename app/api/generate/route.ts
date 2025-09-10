@@ -1,106 +1,98 @@
 import { GoogleGenerativeAI } from "@google/generative-ai"
+import { promises as fs } from 'fs'
+import path from 'path'
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!)
+const BATCH_SAVE_SIZE = 200
 
-const internalUrls = [
-"https://www.easyclinic.io/",
-"https://www.easyclinic.io/pediatric/",
-"https://www.easyclinic.io/pricing/",
-"https://www.easyclinic.io/dermatology/",
-"https://www.easyclinic.io/urology/",
-"https://www.easyclinic.io/trichology/",
-"https://www.easyclinic.io/sexology/",
-"https://www.easyclinic.io/rheumatology/",
-"https://www.easyclinic.io/radiology/",
-"https://www.easyclinic.io/psychology/",
-"https://www.easyclinic.io/psychiatry/",
-"https://www.easyclinic.io/physiotherapy/",
-"https://www.easyclinic.io/pathology/",
-"https://www.easyclinic.io/orthopedic/",
-"https://www.easyclinic.io/ophthalmology/",
-"https://www.easyclinic.io/oncology/",
-"https://www.easyclinic.io/obs-gynae/",
-"https://www.easyclinic.io/neurology/",
-"https://www.easyclinic.io/nephrology/",
-"https://www.easyclinic.io/ivf/",
-"https://www.easyclinic.io/immunology/",
-"https://www.easyclinic.io/hematology/",
-"https://www.easyclinic.io/general-practitioner/",
-"https://www.easyclinic.io/gastroenterology/",
-"https://www.easyclinic.io/family-physician/",
-"https://www.easyclinic.io/endocrinology/",
-"https://www.easyclinic.io/diabetology/",
-"https://www.easyclinic.io/dental/",
-"https://www.easyclinic.io/cosmetology/",
-"https://www.easyclinic.io/ayurveda/",
-"https://www.easyclinic.io/alternative-medicine/",
-"https://www.easyclinic.io/allergy/",
-"https://www.easyclinic.io/aesthetic/",
-"https://www.easyclinic.io/appointment-scheduling-at-easy-clinic/",
-"https://www.easyclinic.io/patient-engagement-at-easyclinic/",
-"https://www.easyclinic.io/hospital-opd-nursing-home-software/",
-"https://www.easyclinic.io/malaysia/",
-"https://www.easyclinic.io/kenya/",
-"https://www.easyclinic.io/ent/",
-"https://www.easyclinic.io/cardiology/",
-"https://www.easyclinic.io/mental-health/",
-"https://www.easyclinic.io/general-surgery/",
-"https://www.easyclinic.io/pulmonology/",
-"https://www.easyclinic.io/how-do-i-get-approval-from-the-kmpdc-in-kenya/",
-"https://www.easyclinic.io/how-to-get-approval-from-the-medical-practitioners-and-dentists-council-in-india-nmc-dci/",
-"https://www.easyclinic.io/how-much-does-it-cost-to-open-a-clinic-in-mumbai/",
-"https://www.easyclinic.io/how-do-i-start-a-private-clinic-in-india/",
-"https://www.easyclinic.io/what-are-the-registration-and-licensing-requirements-for-doctors-in-kenya/",
-"https://www.easyclinic.io/how-much-does-it-cost-to-open-a-clinic-in-nairobi/",
-"https://www.easyclinic.io/what-are-the-best-locations-to-open-a-clinic-in-kenya/",
-"https://www.easyclinic.io/the-ultimate-guide-to-starting-a-clinic-in-kenya/",
-"https://www.easyclinic.io/ai-in-follow-up-automation-improving-patient-adherence/",
-"https://www.easyclinic.io/ai-in-dermatology-emr-simplifying-skin-care-records/",
-"https://www.easyclinic.io/ai-in-psychiatric-emr-supporting-mental-wellness/",
-"https://www.easyclinic.io/ai-in-clinic-data-security-protecting-patient-privacy/",
-"https://www.easyclinic.io/ai-in-paperless-clinics-cutting-administrative-clutter/",
-"https://www.easyclinic.io/ai-in-cardiology-emr-precision-heart-care/",
-"https://www.easyclinic.io/ai-in-clinic-staff-coordination-optimizing-teamwork/",
-"https://www.easyclinic.io/ai-in-multi-location-clinics-streamlining-operations-across-branches/",
-"https://www.easyclinic.io/ai-in-orthopedic-emr-enhancing-bone-health-care/",
-"https://www.easyclinic.io/ai-in-surgical-emr-streamlining-operative-care/",
-"https://www.easyclinic.io/ai-in-preventive-care-analytics-predicting-health-risks/",
-"https://www.easyclinic.io/ai-in-referral-management-enhancing-care-coordination-for-better-patient-outcomes/",
-"https://www.easyclinic.io/ai-in-pediatric-emr-tracking-child-health-made-easy/",
-"https://www.easyclinic.io/how-ai-in-clinic-inventory-management-boosts-efficiency/",
-"https://www.easyclinic.io/ai-in-patient-triage-speeding-up-emergency-care/",
-"https://www.easyclinic.io/ai-in-chronic-care-managing-long-term-conditions/",
-"https://www.easyclinic.io/ai-in-gynecology-emr-empowering-womens-health/",
-"https://www.easyclinic.io/ai-in-diagnostic-accuracy-reducing-clinical-errors/",
-"https://www.easyclinic.io/ai-in-multilingual-prescriptions-bridging-language-gaps/",
-"https://www.easyclinic.io/ai-in-radiology-workflows-enhancing-imaging-efficiency/",
-"https://www.easyclinic.io/revolutionizing-emr-documentation-how-easy-clinics-ai-powered-transcription-improves-healthcare-efficiency/",
-"https://www.easyclinic.io/how-ai-contributes-to-minimizing-medical-billing-errors/",
-"https://www.easyclinic.io/ai-for-dental-clinic-management-revolutionizing-patient-care-with-easy-clinic/",
-"https://www.easyclinic.io/ai-for-diabetologists-the-future-of-diabetes-care-with-advanced-technology/",
-"https://www.easyclinic.io/how-ai-powered-emr-software-is-transforming-clinic-management/",
-"https://www.easyclinic.io/how-ai-for-doctors-is-transforming-clinical-practice/",
-"https://www.easyclinic.io/ai-enabled-telemedicine-solutions-the-future-of-digital-healthcare/",
-"https://www.easyclinic.io/ai-in-health-data-analytics-smarter-insights-for-clinics/",
-"https://www.easyclinic.io/easy-clinic-patient-engagement-with-ai-smart-healthcare-solutions/",
-"https://www.easyclinic.io/ai-powered-medical-billing-software-transforming-healthcare-finance/",
-"https://www.easyclinic.io/why-legacy-systems-need-an-upgrade-the-hidden-costs-of-staying-behind/",
-"https://www.easyclinic.io/how-to-kickstart-your-doctorpreneur-journey-finding-the-ultimate-clinic-management-solution/",
-"https://www.easyclinic.io/tips-to-help-you-deliver-professional-care-online/",
-"https://www.easyclinic.io/how-to-make-your-waiting-room-more-patient-friendly/",
-"https://www.easyclinic.io/why-clinic-management-solution-is-must-for-clinics/",
-"https://www.easyclinic.io/top-strategies-to-boost-patient-acquisition-in-2024/",
-"https://www.easyclinic.io/streamlining-clinic-administration-the-key-to-increased-revenue/",
-"https://www.easyclinic.io/questions-to-ask-your-clinic-emr-software-provider/",
-"https://www.easyclinic.io/navigating-legacy-system-ehr-data-migration/",
-"https://www.easyclinic.io/how-ai-can-enhance-patient-engagement-across-the-clinic-journey/",
-"https://www.easyclinic.io/features-that-your-telemedicine-software-should-have/",
-"https://www.easyclinic.io/faqs-on-emr-medical-software/",
-"https://www.easyclinic.io/check-these-useful-insights-on-running-a-clinic-efficiently/",
-"https://www.easyclinic.io/bridging-the-gap-how-tech-is-transforming-indian-healthcare/",
-]
+// Ensure downloads directory exists
+const DOWNLOADS_DIR = path.join(process.cwd(), 'downloads')
+const RESUME_FILE = path.join(DOWNLOADS_DIR, 'resume.json')
+const INPROGRESS_FILE = path.join(DOWNLOADS_DIR, 'in_progress.json')
+async function ensureDownloadsDir() {
+  try {
+    await fs.mkdir(DOWNLOADS_DIR, { recursive: true })
+  } catch (error) {
+    console.error('Error creating downloads directory:', error)
+  }
+}
 
-// Helper function to find a value across multiple possible field names
+// Save batch to file
+async function saveBatch(batch: any[], batchNumber: number) {
+  try {
+    await ensureDownloadsDir()
+    const filename = path.join(DOWNLOADS_DIR, `clinic_${batchNumber}.json`)
+    await fs.writeFile(filename, JSON.stringify(batch, null, 2))
+    console.log(`Batch ${batchNumber} saved: clinic_${batchNumber}.json (${batch.length} records)`)
+    return filename
+  } catch (error) {
+    console.error(`Error saving batch ${batchNumber}:`, error)
+    throw error
+  }
+}
+
+// Resume utilities
+async function readResume(): Promise<{ lastProcessedName?: string, lastSavedBatchNumber?: number } | null> {
+  try {
+    await ensureDownloadsDir()
+    const data = await fs.readFile(RESUME_FILE, 'utf8')
+    return JSON.parse(data)
+  } catch {
+    return null
+  }
+}
+
+async function writeResume(update: { lastProcessedName?: string, lastSavedBatchNumber?: number }) {
+  try {
+    await ensureDownloadsDir()
+    const prev = (await readResume()) || {}
+    const merged = { ...prev, ...update, updatedAt: new Date().toISOString() }
+    await fs.writeFile(RESUME_FILE, JSON.stringify(merged, null, 2))
+  } catch (error) {
+    console.warn('Failed to write resume state:', error)
+  }
+}
+
+async function resetResume() {
+  try {
+    await fs.unlink(RESUME_FILE)
+  } catch {}
+}
+
+// Persistent accumulation helpers for splitting every BATCH_SAVE_SIZE records
+async function readInProgress(): Promise<any[]> {
+  try {
+    await ensureDownloadsDir()
+    const data = await fs.readFile(INPROGRESS_FILE, 'utf8')
+    const parsed = JSON.parse(data)
+    return Array.isArray(parsed) ? parsed : []
+  } catch {
+    return []
+  }
+}
+
+async function writeInProgress(records: any[]) {
+  try {
+    await ensureDownloadsDir()
+    await fs.writeFile(INPROGRESS_FILE, JSON.stringify(records, null, 2))
+  } catch (error) {
+    console.warn('Failed to write in-progress buffer:', error)
+  }
+}
+
+// Generate Google Maps search text
+function generateGmapSearchText(clinicData: Record<string, any>): string | undefined {
+  const name = findValueByPossibleKeys(clinicData, ["name", "Name", "clinicName"]);
+  const county = findValueByPossibleKeys(clinicData, ["county", "County", "location"]);
+  const subCounty = findValueByPossibleKeys(clinicData, ["subCounty", "subcounty", "Sub County"]);
+
+  if (name && county && subCounty) {
+    return `${name}, ${county}, ${subCounty}`;
+  }
+  return undefined;
+}
+
+// Helper: normalize field values
 function findValueByPossibleKeys(data: Record<string, any>, possibleKeys: string[]): string | undefined {
   for (const key of possibleKeys) {
     if (data[key] && typeof data[key] === "string" && data[key].trim() !== "") {
@@ -110,361 +102,74 @@ function findValueByPossibleKeys(data: Record<string, any>, possibleKeys: string
   return undefined
 }
 
-// Helper function to find contact information
-function findContactInfo(data: Record<string, any>): { email?: string; phone?: string; website?: string } {
-  const contactInfo: { email?: string; phone?: string; website?: string } = {}
+// Extract contact info
+function findContactInfo(data: Record<string, any>) {
+  const emailKeys = ["email", "Email", "contact_email", "contactEmail"]
+  const phoneKeys = ["phone", "Phone", "phoneNumber", "mobile"]
+  const websiteKeys = ["website", "Website", "url", "URL"]
 
-  // Look for email in various possible field names
-  const emailKeys = ["email", "Email", "EMAIL", "emailAddress", "EmailAddress", "contact_email", "contactEmail"]
-  contactInfo.email = findValueByPossibleKeys(data, emailKeys)
-
-  // Look for phone in various possible field names
-  const phoneKeys = ["phone", "Phone", "PHONE", "phoneNumber", "PhoneNumber", "contact", "Contact", "mobile", "Mobile"]
-  contactInfo.phone = findValueByPossibleKeys(data, phoneKeys)
-
-  // Look for website in various possible field names
-  const websiteKeys = ["website", "Website", "WEBSITE", "web", "Web", "url", "URL"]
-  contactInfo.website = findValueByPossibleKeys(data, websiteKeys)
-
-  return contactInfo
+  return {
+    email: findValueByPossibleKeys(data, emailKeys),
+    phone: findValueByPossibleKeys(data, phoneKeys),
+    website: findValueByPossibleKeys(data, websiteKeys),
+  }
 }
 
-// Helper function to extract last word from location/address
+// Extract last location word (fallback to Kenya)
 function extractLastLocationWord(location: string): string {
-  if (!location || location.toLowerCase() === "n/a") {
-    return "Kenya"
-  }
-  // Split by multiple possible separators (spaces, commas, periods)
-  const words = location.trim().split(/[\s,\.]+/).filter(word => word.length > 0)
+  if (!location || location.toLowerCase() === "n/a") return "Kenya"
+  const words = location.trim().split(/[\s,\.]+/).filter(Boolean)
   const lastWord = words[words.length - 1]
-  // If last word is a number, PO BOX, or empty, try second to last word or return Kenya
-  if (!lastWord || /^\d+$/.test(lastWord) || lastWord.toLowerCase().includes('box')) {
-    return words[words.length - 2] || "Kenya"
-  }
+  if (!lastWord || /^\d+$/.test(lastWord)) return words[words.length - 2] || "Kenya"
   return lastWord
 }
 
-function generateMetaTitle(doctorData: DoctorData): string {
-  // Look for name in various possible field names, prioritizing Fullname
-  const nameKeys = ["Fullname", "fullName", "FullName", "name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName"]
-  const name = findValueByPossibleKeys(doctorData, nameKeys) || "Doctor"
-
-  // Look for specialty in various possible field names
-  const specialtyKeys = [
-    "mainSpecialty",
-    "specialty",
-    "Specialty",
-    "Sub-Specialty",
-    "SPECIALTY",
-    "specialization",
-    "Specialization",
-    "field",
-    "Discipline",
-  ]
-  const specialty = findValueByPossibleKeys(doctorData, specialtyKeys) || "Medical Professional"
-
-  const locationKeys = ["location", "Location", "city", "City", "country", "Country", "address", "Address"]
-  const locationFull = findValueByPossibleKeys(doctorData, locationKeys) || "Kenya"
+// Metadata generators
+function generateMetaTitle(clinicData: ClinicData): string {
+  const name = findValueByPossibleKeys(clinicData, ["name", "Name", "clinicName"]) || "Clinic"
+  const specialty = findValueByPossibleKeys(clinicData, ["specialty", "Specialty", "mainSpecialty"]) || "Medical Clinic"
+  const locationFull = findValueByPossibleKeys(clinicData, ["location", "city", "county", "country", "address"]) || "Kenya"
   const location = extractLastLocationWord(locationFull)
 
   let metaTitle = `${name} - ${specialty} in ${location}`
-  if (metaTitle.length > 60) {
-    metaTitle = metaTitle.substring(0, 57) + "..."
-  }
-
+  if (metaTitle.length > 60) metaTitle = metaTitle.substring(0, 57) + "..."
   return metaTitle
 }
 
-function generateMetaDescription(doctorData: DoctorData): string {
-  // Look for name in various possible field names, prioritizing Fullname
-  const nameKeys = ["Fullname", "fullName", "FullName", "name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName"]
-  const name = findValueByPossibleKeys(doctorData, nameKeys) || "Doctor"
+function generateMetaDescription(clinicData: ClinicData): string {
+  const name = findValueByPossibleKeys(clinicData, ["name", "Name", "clinicName"]) || "Clinic"
+  const specialty = findValueByPossibleKeys(clinicData, ["specialty", "Specialty", "mainSpecialty"]) || "healthcare"
+  const location = findValueByPossibleKeys(clinicData, ["location", "city", "county", "country", "address"]) || "Kenya"
 
-  // Look for specialty in various possible field names
-  const specialtyKeys = [
-    "mainSpecialty",
-    "specialty",
-    "Specialty",
-    "Sub-Specialty",
-    "SPECIALTY",
-    "specialization",
-    "Specialization",
-    "field",
-  ]
-  const specialty = findValueByPossibleKeys(doctorData, specialtyKeys) || ""
-
-  // Look for qualifications in various possible field names
-  const qualificationKeys = [
-    "qualifications",
-    "Qualifications",
-    "degree",
-    "Degree",
-    "degrees",
-    "Degrees",
-    "education",
-    "Education",
-  ]
-  const qualifications = findValueByPossibleKeys(doctorData, qualificationKeys) || ""
-
-  // Look for location in various possible field names
-  const locationKeys = ["location", "Location", "city", "City", "country", "Country", "address", "Address"]
-  let location = findValueByPossibleKeys(doctorData, locationKeys) || ""
-
-  // Replace N/A with Kenya
-  if (!location || location.toLowerCase() === "n/a") {
-    location = "Kenya"
-  }
-
-  // Create a meta description using the template
-  let metaDescription = `${name} is a `
-
-  // Add a qualifying adjective (randomly selected)
-  const adjectives = [
-    "highly qualified",
-    "experienced",
-    "dedicated",
-    "skilled",
-    "specialized",
-    "professional",
-    "expert",
-  ]
-  const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)]
-  metaDescription += `${randomAdjective} ${specialty} in ${location}`
-
-  // Add qualifications if they exist and aren't "N/A"
-  if (qualifications && !qualifications.toLowerCase().includes("n/a")) {
-    metaDescription += ` with qualifications in ${qualifications.split(",")[0]}`
-  }
-
-  // Add a closing phrase (randomly selected)
-  const closingPhrases = [
-    "dedicated to providing comprehensive medical care.",
-    "offering specialized healthcare services.",
-    "committed to patient-centered treatment.",
-    "providing expert medical services.",
-    "focused on delivering quality healthcare.",
-  ]
-  const randomClosing = closingPhrases[Math.floor(Math.random() * adjectives.length)]
-  metaDescription += ` ${randomClosing}`
-
-  // Ensure it doesn't exceed 160 characters (maximum limit, not target)
-  if (metaDescription.length > 160) {
-    metaDescription = metaDescription.substring(0, 157) + "..."
-  }
-
+  let metaDescription = `${name} is a trusted ${specialty} in ${location}, providing quality healthcare services for the community.`
+  if (metaDescription.length > 160) metaDescription = metaDescription.substring(0, 157) + "..."
   return metaDescription
 }
 
-function generateSlug(doctorData: DoctorData): string {
-  // Look for name in various possible field names, prioritizing Fullname
-  const nameKeys = ["Fullname", "fullName", "FullName", "name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName"]
-  const name = findValueByPossibleKeys(doctorData, nameKeys) || "Doctor"
+function generateSlug(clinicData: ClinicData): string {
+  const name = findValueByPossibleKeys(clinicData, ["name", "Name", "clinicName"]) || "clinic"
+  const specialty = findValueByPossibleKeys(clinicData, ["specialty", "Specialty", "mainSpecialty"]) || "healthcare"
+  const location = findValueByPossibleKeys(clinicData, ["location", "city", "county", "country", "address"]) || "Kenya"
 
-  // Look for specialty in various possible field names
-  const specialtyKeys = [
-    "mainSpecialty",
-    "specialty",
-    "Specialty",
-    "SPECIALTY",
-    "specialization",
-    "Specialization",
-    "field",
-  ]
-  const specialty = findValueByPossibleKeys(doctorData, specialtyKeys) || ""
-
-  // Look for location in various possible field names
-  const locationKeys = ["location", "Location", "city", "City", "country", "Country", "address", "Address"]
-  let location = findValueByPossibleKeys(doctorData, locationKeys) || ""
-
-  // Replace N/A with Kenya
-  if (!location || location.toLowerCase() === "n/a") {
-    location = "Kenya"
-  }
-
-  // Combine, lowercase, and add dashes
-  const slug = `${name}-${specialty}-${location}`
+  return `${name}-${specialty}-${location}`
     .toLowerCase()
-    .replace(/[^\w\s-]/g, "") // Remove special characters
-    .replace(/\s+/g, "-") // Replace spaces with dashes
-    .replace(/-+/g, "-") // Replace multiple dashes with single dash
-
-  return slug
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
 }
 
-function generateFocusKeyword(doctorData: DoctorData): string {
-  // Look for specialty in various possible field names
-  const specialtyKeys = [
-    "mainSpecialty",
-    "specialty",
-    "Specialty",
-    "SPECIALTY",
-    "specialization",
-    "Specialization",
-    "field",
-  ]
-  const specialty = findValueByPossibleKeys(doctorData, specialtyKeys) || ""
-
-  // Look for location in various possible field names
-  const locationKeys = ["location", "Location", "city", "City", "country", "Country", "address", "Address"]
-  let location = findValueByPossibleKeys(doctorData, locationKeys) || ""
-
-  // Replace N/A with Kenya
-  if (!location || location.toLowerCase() === "n/a") {
-    location = "Kenya"
-  }
-
-  // Create focus keyword
-  return `${specialty} in ${location}`
-}
-
-function extractKeywords(urls: string[]): { keyword: string; url: string }[] {
-  const baseUrl = "https://www.easyclinic.io/"
-  return urls
-    .map((url) => {
-      if (!url.startsWith(baseUrl)) {
-        return { keyword: "", url: "" }
-      }
-      const path = url.substring(baseUrl.length).replace(/\/$/, "")
-      if (!path) {
-        return { keyword: "", url: "" }
-      }
-      const segments = path.split("-")
-      const keywordMappings: Record<string, string[]> = {
-        emr: ["emr", "electronic medical records", "medical records"],
-        ai: ["ai", "artificial intelligence", "ai powered"],
-        clinic: ["clinic", "clinical", "medical clinic"],
-        patient: ["patient", "patient care", "patient engagement"],
-        healthcare: ["healthcare", "health care", "medical care"],
-        telemedicine: ["telemedicine", "telehealth", "virtual care"],
-        medical: ["medical", "medicine", "healthcare"],
-        billing: ["billing", "medical billing", "healthcare billing"],
-        management: ["management", "administration", "practice management"],
-      }
-      const specialties = [
-        "cardiology",
-        "neurology",
-        "pediatrics",
-        "orthopedic",
-        "dermatology",
-        "ophthalmology",
-        "psychiatry",
-        "psychology",
-        "dental",
-        "oncology",
-        "gynecology",
-        "urology",
-        "endocrinology",
-        "gastroenterology",
-        "pulmonology",
-        "rheumatology",
-        "nephrology",
-        "hematology",
-      ]
-      const specialty = segments.find((segment) => specialties.includes(segment.toLowerCase()))
-      if (specialty) {
-        return { keyword: specialty, url }
-      }
-      const foundKeywords: string[] = []
-      segments.forEach((segment) => {
-        Object.entries(keywordMappings).forEach(([key, variations]) => {
-          if (variations.some((v) => segment.toLowerCase().includes(v))) {
-            foundKeywords.push(key)
-          }
-        })
-      })
-      const combinedKeywords = foundKeywords.reduce((acc: string[], curr: string) => {
-        const last = acc[acc.length - 1]
-        const combination = last ? `${last} ${curr}` : curr
-        const validCombinations = [
-          "ai powered",
-          "medical billing",
-          "patient care",
-          "healthcare management",
-          "clinic management",
-          "patient engagement",
-          "medical records",
-        ]
-        if (validCombinations.includes(combination)) {
-          acc[acc.length - 1] = combination
-        } else {
-          acc.push(curr)
-        }
-        return acc
-      }, [])
-      const keyword = combinedKeywords[0] || path.replace(/-/g, " ")
-      return { keyword, url }
-    })
-    .filter((item) => item.keyword !== "" && item.keyword.length > 2)
-}
-
-function linkKeywords(text: string, keywords: Array<{ keyword: string; url: string }>) {
-  const linkedKeywords = new Set()
-  const sortedKeywords = [...keywords].sort((a, b) => b.keyword.length - a.keyword.length)
-  sortedKeywords.forEach(({ keyword, url }) => {
-    const lowerKeyword = keyword.toLowerCase()
-    if (linkedKeywords.has(lowerKeyword)) return
-    const regex = new RegExp(`(?<!<[^>]*)(\\b${keyword.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&")}\\b)(?![^<]*>)`, "i")
-    let replaced = false
-    text = text.replace(regex, (match) => {
-      if (replaced) return match
-      replaced = true
-      linkedKeywords.add(lowerKeyword)
-      return `<a href="${url}">${match}</a>`
-    })
-  })
-  return text
-}
-
-// Update the DoctorData interface to make all fields optional
-interface DoctorData {
+interface ClinicData {
   [key: string]: string | undefined
 }
 
-// Update the enforceBoldCaps function to handle all optional fields
-function enforceBoldCaps(text: string, selectedData: DoctorData) {
-  // Look for about in various possible field names
-  const aboutKeys = ["about", "About", "biography", "Biography", "description", "Description", "profile", "Profile"]
-  const about = findValueByPossibleKeys(selectedData, aboutKeys)
-
-  // Fix: Add null check for about before calling match()
-  const aboutMatches = about ? about.match(/MB.,ChB.,$$\d{4}$$|MMed$$O\/G$$.,$$\d{4}$$/g) || [] : []
-
-  // Look for name in various possible field names
-  const nameKeys = ["name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName", "fullName", "FullName"]
-  const name = findValueByPossibleKeys(selectedData, nameKeys)
-
-  // Look for specialty in various possible field names
-  const specialtyKeys = [
-    "mainSpecialty",
-    "specialty",
-    "Specialty",
-    "SPECIALTY",
-    "specialization",
-    "Specialization",
-    "field",
-  ]
-  const specialty = findValueByPossibleKeys(selectedData, specialtyKeys)
-
-  // Look for qualifications in various possible field names
-  const qualificationKeys = [
-    "qualifications",
-    "Qualifications",
-    "degree",
-    "Degree",
-    "degrees",
-    "Degrees",
-    "education",
-    "Education",
-  ]
-  const qualifications = findValueByPossibleKeys(selectedData, qualificationKeys)
+// Bold <strong> enforcement
+function enforceBoldCaps(text: string, clinicData: ClinicData) {
+  const name = findValueByPossibleKeys(clinicData, ["name", "Name", "clinicName"])
+  const specialty = findValueByPossibleKeys(clinicData, ["specialty", "Specialty", "mainSpecialty"])
 
   const allowedTerms = [
     name,
     specialty,
-    qualifications,
-    ...aboutMatches,
-    "Maternal and Child Health",
-    "Reproductive Health",
     "NHIF",
     "maternity",
     "Caesarean",
@@ -476,302 +181,774 @@ function enforceBoldCaps(text: string, selectedData: DoctorData) {
     "prenatal care",
     "family planning",
     "cervical screening",
+    "Maternal and Child Health",
+    "Reproductive Health",
   ].filter(Boolean)
 
   const boldCounts = new Map<string, number>()
   return text.replace(/<strong>(.*?)<\/strong>/gi, (match, content) => {
     const exactMatch = allowedTerms.find((term) => term === content)
-    if (!exactMatch) return content // Strip if not an exact match
+    if (!exactMatch) return content
     const count = boldCounts.get(content) || 0
-    if (count >= 5) return content // Strip if over 5
+    if (count >= 5) return content
     boldCounts.set(content, count + 1)
     return match
   })
 }
 
-// Update the POST function to handle all optional fields and different field names
+// Remove HTML shell (doctype, html/head/title/body wrappers)
+function stripHtmlShell(html: string) {
+  return html
+    .replace(/<!DOCTYPE[\s\S]*?>/gi, "")
+    .replace(/<head[\s\S]*?>[\s\S]*?<\/head>/gi, "")
+    .replace(/<title[\s\S]*?>[\s\S]*?<\/title>/gi, "")
+    .replace(/<html[^>]*>/gi, "")
+    .replace(/<\/html>/gi, "")
+    .replace(/<body[^>]*>/gi, "")
+    .replace(/<\/body>/gi, "")
+    .trim()
+}
+
+// Remove a leading "Introduction" label or heading
+function stripLeadingIntroduction(html: string) {
+  let out = html
+    .replace(/^\s*<h[12]>\s*Introduction\s*<\/h[12]>\s*/i, "")
+    .replace(/^\s*<p>\s*Introduction\s*:\s*<\/p>\s*/i, "")
+    .replace(/^\s*Introduction\s*:?\s*/i, "")
+  return out
+}
+
+// Remove disallowed openers (case-insensitive), e.g., "Within Kakamega," at the start
+function stripDisallowedOpeners(html: string) {
+  let out = html.replace(/^\s*Within\s+Kakamega,\s*/i, "")
+  return out
+}
+
+// Normalize inline asterisk bullets to proper <ul><li>...</li></ul>
+function normalizeAsteriskBullets(html: string) {
+  // Encourage line breaks before asterisk bullets
+  let working = html.replace(/\s\*\s+/g, "\n* ")
+  const lines = working.split(/\n/)
+  let inList = false
+  const out: string[] = []
+  for (const line of lines) {
+    const m = line.match(/^\s*\*\s+(.*)$/)
+    if (m) {
+      if (!inList) {
+        out.push("<ul>")
+        inList = true
+      }
+      const item = m[1].trim().replace(/[\s]*\.*\s*$/, "")
+      if (item) out.push(`<li>${item}</li>`)
+    } else {
+      if (inList) {
+        out.push("</ul>")
+        inList = false
+      }
+      out.push(line)
+    }
+  }
+  if (inList) out.push("</ul>")
+  // Collapse potential duplicate lists or empty lines
+  return out.join("\n").replace(/\n{2,}/g, "\n").trim()
+}
+
+// AI Agent #1 — Structure Moderator
+async function moderateContentStructure(
+  rawHtml: string,
+  clinicData: ClinicData,
+  servicesHeader: string,
+  bookingHeader: string,
+  contactSection: string,
+  wordCount: number
+) {
+  const name = findValueByPossibleKeys(clinicData, ["name", "Name", "clinicName"]) || "Clinic"
+  const specialty = findValueByPossibleKeys(clinicData, ["specialty", "Specialty", "mainSpecialty"]) || "Healthcare"
+  const location = findValueByPossibleKeys(clinicData, ["location", "city", "county", "country", "address"]) || "Kenya"
+
+  const moderationPrompt = `You are AI Agent #1: Structure Moderator.
+Task: Take the provided HTML content and strictly enforce the structure and formatting rules below, without adding new facts. Correct mislabeled or repeated sections and remove duplicated paragraphs or bullets. Preserve valid details. Output ONLY sanitized HTML (no backticks).
+
+MANDATES:
+- EXACT sections and order (no extras, no duplicates):
+  1) Introduction (~140 words) — one paragraph. Must begin with a professional declarative sentence and may include a hyperlink to EasyClinic if present.
+  2) <h2>Expertise and Facilities</h2> followed by a short paragraph and a <ul> list. Include exactly one affordability bullet for ${specialty} with the clinic software features link.
+  3) ${servicesHeader} followed by a short paragraph and a <ul> list. Include exactly one bullet positioning ${name} as the answer for “clinics offering ${specialty} in ${location}.”
+  4) ${bookingHeader} followed by one concise paragraph ending with ${contactSection}.
+
+- Remove any meta commentary, labels or headings like “Rendition A/B/C”, “Version”, “Sample”, or prefaces such as “Here are three distinct HTML rewrites…”.
+- Deduplicate repeated sentences or bullets; keep the clearest version.
+- Remove any outer HTML shell including DOCTYPE, <html>, <head>, <title>, and <body> wrappers; return only the section HTML described above.
+- Convert any inline or asterisk-style bullets (e.g., lines beginning with '*') into a proper <ul><li>…</li></ul> list beneath the appropriate section. Ensure bullets are not merged across sections.
+- If a section paragraph accidentally contains asterisks inline, split them into a list right after the paragraph, keeping paragraph content intact.
+- Keep total word count EXACTLY ${wordCount} words. If needed, adjust phrasing minimally without adding claims.
+- Use only 3rd person; no first/second person.
+- Keep hyperlink counts: once for EasyClinic, once for clinic software features.
+- Respect allowed <strong> terms only. Do not introduce new bolded terms.
+- Remove any code fences.
+
+INPUT HTML:
+${rawHtml}`
+
+  const model = genAI.getGenerativeModel({
+    model: "gemini-2.0-flash",
+    generationConfig: { temperature: 0.1, maxOutputTokens: 2048 },
+  })
+  const result = await model.generateContent(moderationPrompt)
+  const response = await result.response
+  let moderated = response.text().replace(/```html|```/g, "").trim()
+  return stripHtmlShell(moderated)
+}
+
+// AI Agent #2 — Third-Person/Tone Moderator
+async function moderateThirdPersonTone(
+  rawHtml: string,
+  clinicData: ClinicData,
+  wordCount: number
+) {
+  const name = findValueByPossibleKeys(clinicData, ["name", "Name", "clinicName"]) || "The clinic"
+  const specialty = findValueByPossibleKeys(clinicData, ["specialty", "Specialty", "mainSpecialty"]) || "healthcare"
+
+  const personalWords = [
+    " I ", " I'm ", " I've ", " I'd ",
+    " my ", " me ", " mine ",
+    " we ", " we're ", " we've ", " we'd ",
+    " our ", " us ", " ours ",
+    " you ", " you're ", " you've ", " you'd ",
+    " your ", " yours "
+  ].join(", ")
+
+  const moderationPrompt = `You are AI Agent #2: Third-Person/Tone Moderator.
+Goal: Ensure the HTML is strictly written in third person and never uses first- or second-person language. The content is not owned by ${name}; it is a neutral directory-like description.
+
+Rules:
+- Replace any personal or direct-address wording (including: ${personalWords}) with neutral third-person phrasing (e.g., "the clinic", "it", "the facility").
+- Remove any meta or instructional chatter such as: “Here are three distinct HTML rewrites…”, “Rendition A/B/C”, “Version”, “Sample output”, or similar labels. Keep only a single, clean rendition of the content.
+- If the official clinic name contains personal-looking words (e.g., starts with "My" as in "My Wellness Medical Centre-Litein"), PRESERVE the name exactly, but remove any personal denotation in surrounding phrasing. Always frame sentences in third person, e.g., "<strong>${name}</strong> is recognized as..." or "The facility, <strong>${name}</strong>, provides...". Do NOT shorten or rewrite the official name.
+- Scan both the input data and the generated HTML for personal wording. Ensure none remains outside the official clinic name string. Do not allow constructions like "my services", "our team", "visit us", or second-person directives.
+- Do NOT allow the content to begin with “Within Kakamega,” (case-insensitive). If it does, rewrite the opening to a professional declarative sentence about ${name} providing ${specialty} in ${location}.
+- Preserve facts, links, headings, allowed <strong> terms, and HTML structure.
+- Do not add new claims or change meaning. Keep the overall word count EXACTLY ${wordCount} words, adjusting phrasing minimally.
+- Output ONLY sanitized HTML (no backticks, no explanations).
+
+INPUT HTML:
+${rawHtml}`
+
+  const model = genAI.getGenerativeModel({
+    model: "gemini-2.0-flash",
+    generationConfig: { temperature: 0.1, maxOutputTokens: 2048 },
+  })
+  const result = await model.generateContent(moderationPrompt)
+  const response = await result.response
+  let moderated = response.text().replace(/```html|```/g, "").trim()
+  return moderated
+}
+
+// AI Agent #3 — Humanize and Diversify (SEO-safe uniqueness)
+async function humanizeAndDiversify(
+  rawHtml: string,
+  clinicData: ClinicData,
+  wordCount: number
+) {
+  const name = findValueByPossibleKeys(clinicData, ["name", "Name", "clinicName"]) || "The clinic"
+  const specialty = findValueByPossibleKeys(clinicData, ["specialty", "Specialty", "mainSpecialty"]) || "healthcare"
+  const location = findValueByPossibleKeys(clinicData, ["location", "city", "county", "country", "address"]) || "Kenya"
+
+  // Lightweight randomness to encourage varied phrasing across records
+  const stylisticHints = [
+    "Vary sentence length; mix short factual lines with longer descriptive ones.",
+    "Use tasteful em dashes or semicolons where appropriate to change cadence.",
+    "Prefer precise nouns and verbs over adjectives; avoid hype.",
+    "Use occasional parenthetical clarifiers that remain factual (e.g., within limits).",
+    "Rotate connective phrases like 'notably', 'in practice', 'as applicable', 'where relevant'.",
+    "Favor parallel structure in bullet points with slight lexical variety.",
+    "Reorder clauses to avoid repetitive openings while staying grammatical.",
+  ]
+  const hint = stylisticHints[Math.floor(Math.random() * stylisticHints.length)]
+
+  const moderationPrompt = `You are AI Agent #3: Humanize and Diversify.
+Goal: Refine the HTML so it reads naturally like human-written copy while remaining neutral, factual, and third person. Ensure each rendition feels stylistically distinct to improve perceived uniqueness and SEO, without adding new facts.
+
+Constraints:
+- Preserve existing facts, section order, headings, links, and allowed <strong> usage.
+- Keep word count EXACTLY ${wordCount} words.
+- Maintain strict third person (no first/second person). Do not introduce claims of ownership.
+- Keep the structural intent enforced previously: Intro paragraph; Expertise heading + short paragraph + bullets; Services heading + short paragraph + bullets; Booking heading + short paragraph.
+- Avoid marketing exaggerations; keep directory-like tone but with natural cadence and varied phrasing.
+- Do not change URLs or add new links.
+
+Style guidance (apply subtly): ${hint}
+
+INPUT HTML:
+${rawHtml}`
+
+  const model = genAI.getGenerativeModel({
+    model: "gemini-2.0-flash",
+    generationConfig: { temperature: 0.35, maxOutputTokens: 2048 },
+  })
+  const result = await model.generateContent(moderationPrompt)
+  const response = await result.response
+  let moderated = response.text().replace(/```html|```/g, "").trim()
+  return moderated
+}
+
+// Process a single clinic record
+async function processClinicData(selectedData: any, selectedHeaders: string[], wordCount: number) {
+  const safeClinicName = findValueByPossibleKeys(selectedData, ["name", "Name", "clinicName"]) || "Clinic"
+  const clinicMainSpecialty = findValueByPossibleKeys(selectedData, ["specialty", "Specialty", "mainSpecialty"]) || "Healthcare"
+  const clinicSubSpecialties = findValueByPossibleKeys(selectedData, ["subSpecialties", "SubSpecialties"]) || clinicMainSpecialty
+  const clinicAbout = findValueByPossibleKeys(selectedData, ["about", "About", "description", "Description"]) || "Not provided"
+  const clinicLocation = findValueByPossibleKeys(selectedData, ["location", "city", "county", "country", "address"]) || "Kenya"
+  const clinicContact = findContactInfo(selectedData)
+
+  const contentContext = selectedHeaders
+    .map((header: string) => {
+      const value = selectedData[header]
+      if (!value) return `${header}: Not provided`
+      if (typeof value === "object") return `${header}: [Complex data structure]`
+      return `${header}: ${value}`
+    })
+    .join("\n")
+
+  let contactSection = `<p>For inquiries, please contact <strong>${safeClinicName}</strong> <a href="#contact">here</a></p>`
+  if (clinicContact.email) contactSection = `<p>For inquiries, please contact <strong>${safeClinicName}</strong> at <a href="mailto:${clinicContact.email}">${clinicContact.email}</a></p>`
+  else if (clinicContact.phone) contactSection = `<p>For inquiries, please contact <strong>${safeClinicName}</strong> at ${clinicContact.phone}</p>`
+
+  const servicesHeader = `<h2>${clinicMainSpecialty} Services Offered by ${safeClinicName}</h2>`
+  const bookingHeader = `<h2>Book an Appointment with ${safeClinicName}</h2>`
+
+  const prompt = `
+Consider yourself as a professional medical SEO content writer. Create an SEO-optimized article about ${safeClinicName} strictly based on the following data. Use only the provided data and context. Do not fabricate or add details beyond logical extensions of specialties.
+
+Clinic Data
+
+Clinic Name: ${safeClinicName}
+
+Location: ${clinicLocation}
+
+Main Specialty: ${clinicMainSpecialty}
+
+Subspecialties: ${clinicSubSpecialties}
+
+About: ${clinicAbout}
+${clinicContact.email ? `- Email: ${clinicContact.email}` : ""}
+${clinicContact.phone ? `- Phone: ${clinicContact.phone}` : ""}
+${clinicContact.website ? `- Website: ${clinicContact.website}` : ""}
+
+Additional Context: ${contentContext}
+
+STRICT Requirements
+
+Word Count: The content MUST be exactly ${wordCount} words.
+
+Structure: Distribute words exactly (~140 intro, ~140 expertise, ~140 services, ~80 booking).
+
+Keyword Density: Natural flow, avoid overstuffing. Target 2–3 uses of ${safeClinicName} per section, maximum 4 in the intro. Ensure ${clinicMainSpecialty} appears 4–5 times across the full article.
+
+Writing Style Rules
+
+All content MUST be written in 3rd person (e.g., “The clinic provides…”, “It is recognized for…”).
+
+NEVER use “we”, “our”, “us”, “you”.
+
+The Introduction MUST start with a professional declarative statement — not casual or narrative phrases like “In the heart of…” or “Located in…”.
+
+Examples of approved professional openings:
+
+“<strong>${safeClinicName}</strong> is recognized as a trusted provider of ${clinicMainSpecialty} services in ${clinicLocation}.”
+
+“As a designated healthcare facility in ${clinicLocation}, <strong>${safeClinicName}</strong> plays a vital role in delivering ${clinicMainSpecialty}.”
+
+“<strong>${safeClinicName}</strong> is acknowledged within ${clinicLocation} for its focus on ${clinicMainSpecialty} and commitment to reliable patient care.”
+
+Each section must open with a factual context-setting sentence.
+
+Tone: neutral, factual, descriptive — like a professional medical directory.
+
+Keyword Frequency, Highlighting & Linking
+
+Limit each key term ("${clinicMainSpecialty}", "NHIF") to 4–5 uses max.
+
+Use <strong> ONLY for: "${safeClinicName}", "${clinicMainSpecialty}", "NHIF", "maternity", "Caesarean", "Obstetrics", "pregnancy", "delivery", "contraception", "menopause", "prenatal care", "family planning", "cervical screening", "Maternal and Child Health", "Reproductive Health".
+
+Do NOT bold unlisted terms.
+
+Limit <strong> usage to 4–5 times max per term.
+
+Hyperlinking Rules:
+
+“clinic software features” → https://www.easyclinic.io/features/
+
+“EasyClinic” → https://www.easyclinic.io/
+
+Each link must be used once only.
+
+Integration of Generic Queries (with Direct 3rd Person Answers)
+
+Intro (~140 words): Establish authority of <strong>${safeClinicName}</strong> in ${clinicLocation} as one of the best and most trusted clinics. Answer queries: “Which is the best clinic near me?” and “Where can I find a trusted clinic in ${clinicLocation}?” as factual statements. Include <a href="https://www.easyclinic.io/">EasyClinic</a>.
+
+Expertise (~140 words): Highlight staff, facilities, and reliability in a short para + bullet list. Answer: “What clinic offers affordable treatment in ${clinicMainSpecialty}?” naturally. Include <a href="https://www.easyclinic.io/features/">clinic software features</a>.
+
+Services (~140 words): Present available services in a short para + bullet list. Directly cover: “Clinics offering <strong>${clinicMainSpecialty}</strong> in ${clinicLocation}.”
+
+Booking (~80 words): Provide concise summary in paragraph form. Directly cover: “Best private clinic near me” by showing why ${safeClinicName} is a top option. End with ${contactSection}.
+
+Section Breakdown
+
+Introduction (~140 words)
+
+<p>Start with a professional declarative sentence (see examples above). Provide authority and trust context for ${safeClinicName} in ${clinicLocation}. Avoid casual openers like “In the heart of” or “Nestled in.” Ensure ${safeClinicName} is mentioned naturally (max 3–4 times). Answer AEO queries about best clinic near me and trusted clinic in ${clinicLocation}. Include EasyClinic link.</p>
+
+Expertise (~140 words)
+
+<h2>Expertise and Facilities</h2> <p>Short intro paragraph about staff expertise, facilities, and standards.</p> <ul> <li>Bullet points about staff qualifications, patient focus, facilities, and technology.</li> <li>One bullet must clearly mention affordability in ${clinicMainSpecialty} with clinic software features link.</li> </ul>
+
+Services (~140 words)
+${servicesHeader}
+
+<p>Short intro paragraph summarizing treatment coverage and patient benefits.</p> <ul> <li>Bullet points describing treatments linked to ${clinicMainSpecialty} and ${clinicSubSpecialties}.</li> <li>One bullet must directly position ${safeClinicName} as the answer for “clinics offering ${clinicMainSpecialty} in ${clinicLocation}.”</li> </ul>
+
+Booking (~80 words)
+${bookingHeader}
+
+<p>Professional summary in 3rd person stating why ${safeClinicName} qualifies as the “best private clinic near me.” Must remain concise, natural, and end with ${contactSection}.</p>`
+
+  const model = genAI.getGenerativeModel({
+    model: "gemini-2.0-flash",
+    generationConfig: { temperature: 0.1, maxOutputTokens: 2048 },
+  })
+
+  const result = await model.generateContent(prompt)
+  const response = await result.response
+  let text = response.text()
+
+  text = text.replace(/```html|```/g, "").trim()
+  text = enforceBoldCaps(text, selectedData)
+  text = stripHtmlShell(text)
+  text = stripLeadingIntroduction(text)
+  text = stripDisallowedOpeners(text)
+  text = normalizeAsteriskBullets(text)
+
+  // AI Agent #3: humanize and diversify phrasing while preserving constraints
+  try {
+    const humanized = await humanizeAndDiversify(
+      text,
+      selectedData,
+      wordCount
+    )
+    text = enforceBoldCaps(humanized, selectedData)
+    text = stripHtmlShell(text)
+    text = stripLeadingIntroduction(text)
+    text = stripDisallowedOpeners(text)
+    text = normalizeAsteriskBullets(text)
+  } catch (e) {
+    console.warn("Agent#3 humanize/diversify skipped due to error:", e)
+  }
+
+  // AI Agent #2: enforce strict third-person tone (no personal or direct address wording)
+  try {
+    const toneModerated = await moderateThirdPersonTone(
+      text,
+      selectedData,
+      wordCount
+    )
+    text = enforceBoldCaps(toneModerated, selectedData)
+    text = stripHtmlShell(text)
+    text = stripLeadingIntroduction(text)
+    text = stripDisallowedOpeners(text)
+    text = normalizeAsteriskBullets(text)
+  } catch (e) {
+    console.warn("Agent#2 tone moderation skipped due to error:", e)
+  }
+
+  // AI Agent #1: enforce structure similar to the reference layout and deduplicate
+  try {
+    const moderated = await moderateContentStructure(
+      text,
+      selectedData,
+      servicesHeader,
+      bookingHeader,
+      contactSection,
+      wordCount
+    )
+    text = enforceBoldCaps(moderated, selectedData)
+    text = stripHtmlShell(text)
+    text = stripLeadingIntroduction(text)
+    text = stripDisallowedOpeners(text)
+    text = normalizeAsteriskBullets(text)
+  } catch (e) {
+    // If moderation fails, continue with the original text
+    console.warn("Agent#1 moderation skipped due to error:", e)
+  }
+
+  // Word count validation
+  const wordCountValidation = text.split(/\s+/).length
+  if (Math.abs(wordCountValidation - wordCount) > wordCount * 0.02) {
+    const retryPrompt = `${prompt}\nCRITICAL: Ensure EXACTLY ${wordCount} words.`
+    const retryResult = await model.generateContent(retryPrompt)
+    const retryResponse = await retryResult.response
+    text = retryResponse.text().replace(/```html|```/g, "").trim()
+    text = enforceBoldCaps(text, selectedData)
+    text = stripHtmlShell(text)
+    text = stripLeadingIntroduction(text)
+    text = stripDisallowedOpeners(text)
+    text = normalizeAsteriskBullets(text)
+
+    // Re-run in the new order: Agent #3 → Agent #2 → Agent #1
+    try {
+      const humanizedRetry = await humanizeAndDiversify(
+        text,
+        selectedData,
+        wordCount
+      )
+      text = enforceBoldCaps(humanizedRetry, selectedData)
+      text = stripHtmlShell(text)
+      text = stripLeadingIntroduction(text)
+      text = stripDisallowedOpeners(text)
+      text = normalizeAsteriskBullets(text)
+    } catch (e) {
+      console.warn("Agent#3 humanize/diversify (retry) skipped due to error:", e)
+    }
+
+    try {
+      const toneModeratedRetry = await moderateThirdPersonTone(
+        text,
+        selectedData,
+        wordCount
+      )
+      text = enforceBoldCaps(toneModeratedRetry, selectedData)
+      text = stripHtmlShell(text)
+      text = stripLeadingIntroduction(text)
+      text = stripDisallowedOpeners(text)
+      text = normalizeAsteriskBullets(text)
+    } catch (e) {
+      console.warn("Agent#2 tone moderation (retry) skipped due to error:", e)
+    }
+
+    try {
+      const moderatedRetry = await moderateContentStructure(
+        text,
+        selectedData,
+        servicesHeader,
+        bookingHeader,
+        contactSection,
+        wordCount
+      )
+      text = enforceBoldCaps(moderatedRetry, selectedData)
+      text = stripHtmlShell(text)
+      text = stripLeadingIntroduction(text)
+      text = stripDisallowedOpeners(text)
+      text = normalizeAsteriskBullets(text)
+    } catch (e) {
+      console.warn("Agent#1 moderation (retry) skipped due to error:", e)
+    }
+  }
+
+  // Metadata
+  const metaTitle = generateMetaTitle(selectedData)
+  const metaDescription = generateMetaDescription(selectedData)
+  const slug = generateSlug(selectedData)
+  const focusKeyword = `${clinicMainSpecialty} in ${clinicLocation}`
+  const gmapSearchText = generateGmapSearchText(selectedData)
+
+  return {
+    content: text,
+    metaTitle,
+    metaDescription,
+    slug,
+    focusKeyword,
+    gmapSearchText,
+    originalData: selectedData
+  }
+}
+
+// Process a batch of clinic records
+async function processBatch(batch: any[], selectedHeaders: string[], wordCount: number) {
+  return Promise.all(
+    batch.map(selectedData => 
+      processClinicData(selectedData, selectedHeaders, wordCount)
+        .catch(error => ({
+          error: `Failed to process record: ${error.message}`,
+          originalData: selectedData
+        }))
+    )
+  )
+}
+
+// API route
 export async function POST(req: Request) {
   try {
-    const { selectedData, selectedHeaders, tone, wordCount } = await req.json()
+    const { selectedData, selectedHeaders, wordCount = 500, resume: resumeOptions, moderateOnly, existingContent } = await req.json()
     if (!selectedData || !selectedHeaders || selectedHeaders.length === 0) {
       throw new Error("Missing required data fields")
     }
+    
+    // Initialize batch tracking
+    let currentBatch: any[] = []
+    let batchNumber = 1
+    const savedFiles: string[] = []
+    await ensureDownloadsDir()
 
-    // Get doctor name from various possible field names
-    const nameKeys = ["name", "Name", "DOCTOR_NAME", "doctor_name", "DoctorName", "fullName", "FullName", "Fullname"]
-    const doctorName = findValueByPossibleKeys(selectedData, nameKeys) || "the doctor"
+    // Manual moderation path for a single record/content
+    if (moderateOnly && existingContent && !Array.isArray(selectedData)) {
+      const processed = await processClinicData(selectedData, selectedHeaders, wordCount)
+      // Replace generated content with moderated existing content by reusing the agent pipeline
+      // We feed existingContent through the same post-generation sanitation/agents by adjusting at the end
+      const name = findValueByPossibleKeys(selectedData, ["name", "Name", "clinicName"]) || "Clinic"
+      const specialty = findValueByPossibleKeys(selectedData, ["specialty", "Specialty", "mainSpecialty"]) || "Healthcare"
+      const location = findValueByPossibleKeys(selectedData, ["location", "city", "county", "country", "address"]) || "Kenya"
 
-    // Get specialty from various possible field names
-    const specialtyKeys = [
-      "mainSpecialty",
-      "specialty",
-      "Specialty",
-      "SPECIALTY",
-      "specialization",
-      "Specialization",
-      "field",
-      "Discipline",
-    ]
-    const mainSpecialty = findValueByPossibleKeys(selectedData, specialtyKeys) || "Medical"
+      // Re-run the agents directly using the same helpers
+      let text = String(existingContent)
+      text = text.replace(/```html|```/g, "").trim()
+      text = enforceBoldCaps(text, selectedData)
+      text = stripHtmlShell(text)
+      text = stripLeadingIntroduction(text)
+      text = stripDisallowedOpeners(text)
+      text = normalizeAsteriskBullets(text)
 
-    // Get about from various possible field names
-    const aboutKeys = ["about", "About", "biography", "Biography", "description", "Description", "profile", "Profile"]
-    const about = findValueByPossibleKeys(selectedData, aboutKeys) || "Not provided"
+      try {
+        const humanized = await humanizeAndDiversify(text, selectedData, wordCount)
+        text = enforceBoldCaps(humanized, selectedData)
+        text = stripHtmlShell(text)
+        text = stripLeadingIntroduction(text)
+        text = stripDisallowedOpeners(text)
+        text = normalizeAsteriskBullets(text)
+      } catch {}
 
-    // Get qualifications from various possible field names
-    const qualificationKeys = [
-      "qualifications",
-      "Qualifications",
-      "degree",
-      "Degree",
-      "degrees",
-      "Degrees",
-      "education",
-      "Education",
-    ]
-    const qualifications = findValueByPossibleKeys(selectedData, qualificationKeys) || "Not provided"
+      try {
+        const toned = await moderateThirdPersonTone(text, selectedData, wordCount)
+        text = enforceBoldCaps(toned, selectedData)
+        text = stripHtmlShell(text)
+        text = stripLeadingIntroduction(text)
+        text = stripDisallowedOpeners(text)
+        text = normalizeAsteriskBullets(text)
+      } catch {}
 
-    // Get subspecialties from various possible field names
-    const subSpecialtyKeys = [
-      "subSpecialties",
-      "subspecialties",
-      "SubSpecialties",
-      "subSpecialty",
-      "subspecialty",
-      "secondarySpecialty",
-      "Sub-Specialty",
-    ]
-    const subSpecialties = findValueByPossibleKeys(selectedData, subSpecialtyKeys) || mainSpecialty // Default to mainSpecialty if not provided
+      const servicesHeader = `<h2>${specialty} Services Offered by ${name}</h2>`
+      const bookingHeader = `<h2>Book an Appointment with ${name}</h2>`
+      const contactInfo = findContactInfo(selectedData)
+      let contactSection = `<p>For inquiries, please contact <strong>${name}</strong> <a href="#contact">here</a></p>`
+      if (contactInfo.email) contactSection = `<p>For inquiries, please contact <strong>${name}</strong> at <a href="mailto:${contactInfo.email}">${contactInfo.email}</a></p>`
+      else if (contactInfo.phone) contactSection = `<p>For inquiries, please contact <strong>${name}</strong> at ${contactInfo.phone}</p>`
 
-    // Get location from various possible field names
-    const locationKeys = ["location", "Location", "city", "City", "country", "Country", "address", "Address"]
-    const location = findValueByPossibleKeys(selectedData, locationKeys) || "Not specified"
+      try {
+        const structured = await moderateContentStructure(
+          text,
+          selectedData,
+          servicesHeader,
+          bookingHeader,
+          contactSection,
+          wordCount
+        )
+        text = enforceBoldCaps(structured, selectedData)
+        text = stripHtmlShell(text)
+        text = stripLeadingIntroduction(text)
+        text = stripDisallowedOpeners(text)
+        text = normalizeAsteriskBullets(text)
+      } catch {}
 
-    // Get contact information
-    const contactInfo = findContactInfo(selectedData)
+      const metaTitle = generateMetaTitle(selectedData)
+      const metaDescription = generateMetaDescription(selectedData)
+      const slug = generateSlug(selectedData)
+      const focusKeyword = `${specialty} in ${location}`
+      const gmapSearchText = generateGmapSearchText(selectedData)
+
+      return Response.json({
+        content: text,
+        metaTitle,
+        metaDescription,
+        slug,
+        focusKeyword,
+        gmapSearchText,
+        originalData: selectedData
+      })
+    }
+
+    // Convert single record to array for consistent processing
+    const dataArrayFull = Array.isArray(selectedData) ? selectedData : [selectedData]
+    const enableResume = resumeOptions?.enable !== false
+    const shouldResetResume = resumeOptions?.reset === true
+    if (shouldResetResume) {
+      await resetResume()
+    }
+    let dataArray = dataArrayFull
+    if (enableResume && Array.isArray(selectedData)) {
+      const state = await readResume()
+      if (state?.lastProcessedName) {
+        const lastIdx = dataArrayFull.findIndex((d) => {
+          const n = findValueByPossibleKeys(d, ["name", "Name", "clinicName"]) || ""
+          return n === state.lastProcessedName
+        })
+        const startIdx = lastIdx >= 0 ? lastIdx + 1 : 0
+        dataArray = dataArrayFull.slice(startIdx)
+        if (state.lastSavedBatchNumber && state.lastSavedBatchNumber > 0) {
+          batchNumber = state.lastSavedBatchNumber + 1
+        }
+      }
+    }
+    const BATCH_SIZE = 10
+    const results = []
+
+    // Process in batches of BATCH_SIZE
+    for (let i = 0; i < dataArray.length; i += BATCH_SIZE) {
+      const batch = dataArray.slice(i, i + BATCH_SIZE)
+      const batchResults = await processBatch(batch, selectedHeaders, wordCount)
+      results.push(...batchResults)
+      
+      // Add to current batch and save if needed (in-memory for this request)
+      currentBatch.push(...batchResults)
+      // Update resume per processed record
+      if (enableResume) {
+        for (const record of batch) {
+          const lastName = findValueByPossibleKeys(record, ["name", "Name", "clinicName"]) || undefined
+          if (lastName) await writeResume({ lastProcessedName: lastName })
+        }
+      }
+
+      // Persistently accumulate across requests and split every BATCH_SAVE_SIZE
+      let buffer = await readInProgress()
+      buffer.push(...batchResults)
+      while (buffer.length >= BATCH_SAVE_SIZE) {
+        const toSave = buffer.slice(0, BATCH_SAVE_SIZE)
+        const saved = await saveBatch(toSave, batchNumber)
+        savedFiles.push(saved)
+        if (enableResume) await writeResume({ lastSavedBatchNumber: batchNumber })
+        buffer = buffer.slice(BATCH_SAVE_SIZE)
+        batchNumber++
+      }
+      await writeInProgress(buffer)
+    }
+    
+    // Save any remaining records in the current batch
+    // Do not force-save the trailing remainder; keep it in in_progress until it reaches BATCH_SAVE_SIZE
+
+    // If single record was passed in, return single result (backwards compatibility)
+    const responseData = Array.isArray(selectedData) ? { results, savedFiles } : results[0]
+    return Response.json(responseData)
+
+    const safeClinicName = findValueByPossibleKeys(selectedData, ["name", "Name", "clinicName"]) || "Clinic"
+    const clinicMainSpecialty = findValueByPossibleKeys(selectedData, ["specialty", "Specialty", "mainSpecialty"]) || "Healthcare"
+    const clinicSubSpecialties = findValueByPossibleKeys(selectedData, ["subSpecialties", "SubSpecialties"]) || clinicMainSpecialty
+    const clinicAbout = findValueByPossibleKeys(selectedData, ["about", "About", "description", "Description"]) || "Not provided"
+    const clinicLocation = findValueByPossibleKeys(selectedData, ["location", "city", "county", "country", "address"]) || "Kenya"
+    const clinicContact = findContactInfo(selectedData)
 
     const contentContext = selectedHeaders
       .map((header: string) => {
-        // Add null check for selectedData[header]
-        return `${header}: ${selectedData[header] || "Not provided"}`
+        const value = selectedData[header]
+        if (!value) return `${header}: Not provided`
+        if (typeof value === "object") return `${header}: [Complex data structure]`
+        return `${header}: ${value}`
       })
       .join("\n")
 
-    // Prepare contact information for the prompt
-    let contactSection = `<p>For inquiries, please contact <strong>${doctorName}</strong> <a href="#contact">here</a></p>`
+    let contactSection = `<p>For inquiries, please contact <strong>${safeClinicName}</strong> <a href="#contact">here</a></p>`
+    if (clinicContact.email) contactSection = `<p>For inquiries, please contact <strong>${safeClinicName}</strong> at <a href="mailto:${clinicContact.email}">${clinicContact.email}</a></p>`
+    else if (clinicContact.phone) contactSection = `<p>For inquiries, please contact <strong>${safeClinicName}</strong> at ${clinicContact.phone}</p>`
 
-    // If email is available, include it in the contact section
-    if (contactInfo.email) {
-      contactSection = `<p>For inquiries, please contact <strong>${doctorName}</strong> at <a href="mailto:${contactInfo.email}">${contactInfo.email}</a></p>`
-    }
+    const servicesHeader = `<h2>${clinicMainSpecialty} Services Offered by ${safeClinicName}</h2>`
+    const bookingHeader = `<h2>Book an Appointment with ${safeClinicName}</h2>`
 
-    // If phone is available and email is not, use phone
-    else if (contactInfo.phone) {
-      contactSection = `<p>For inquiries, please contact <strong>${doctorName}</strong> at ${contactInfo.phone}</p>`
-    }
-
-    // Ensure we have valid values for the prompt
-    const safeMainSpecialty = mainSpecialty || "Medical"
-    const safeDoctorName = doctorName || "the doctor"
-
-    // Update the h2 tags in the prompt to use safe values
-    const servicesHeader = `<h2>${safeMainSpecialty} Services Offered by ${safeDoctorName}</h2>`
-    const bookingHeader = `<h2>Book an Appointment with ${safeDoctorName}</h2>`
-
+    // === FINAL PROMPT (REVISED) ===
     const prompt = `
-You are a professional medical content writer. Create SEO-optimized content about ${safeDoctorName} based STRICTLY on the following data. Do not fabricate details beyond logical extensions of specialties explicitly tied to the data. Use only the provided data and context below.
+Consider yourself as a professional medical SEO content writer. Create an SEO-optimized article about ${safeClinicName} strictly based on the following data. Use only the provided data and context. Do not fabricate or add details beyond logical extensions of specialties.
 
-Doctor Data:
-- Name: ${safeDoctorName}
-- Qualifications: ${qualifications}
-- Main Specialty: ${safeMainSpecialty}
-- Subspecialties: ${subSpecialties || safeMainSpecialty}
-- Location: ${location}
-- About: ${about}
-${contactInfo.email ? `- Email: ${contactInfo.email}` : ""}
-${contactInfo.phone ? `- Phone: ${contactInfo.phone}` : ""}
-${contactInfo.website ? `- Website: ${contactInfo.website}` : ""}
+Clinic Data
+Clinic Name: ${safeClinicName}
+Location: ${clinicLocation}
+Main Specialty: ${clinicMainSpecialty}
+Subspecialties: ${clinicSubSpecialties}
+About: ${clinicAbout}
+${clinicContact.email ? `- Email: ${clinicContact.email}` : ""}
+${clinicContact.phone ? `- Phone: ${clinicContact.phone}` : ""}
+${clinicContact.website ? `- Website: ${clinicContact.website}` : ""}
 
-Additional Context:
-${contentContext}
+Additional Context: ${contentContext}
 
-STRICT Requirements:
-1. Word Count: The content MUST be exactly ${wordCount} words.
-2. Structure: Distribute words exactly (~140 intro, ~140 qualifications, ~140 services, ~80 booking).
+STRICT Requirements
+Word Count: The content MUST be exactly ${wordCount} words.
+Structure: Distribute words exactly (~140 intro, ~140 expertise, ~140 services, ~80 booking).
 
-KEYWORD FREQUENCY AND HIGHLIGHTING:
-1. Keyword Usage:
- - Limit each key term (e.g., "${safeMainSpecialty}", "NHIF") to 4-5 uses max in the text, strictly enforced.
- - Spread naturally; no stuffing.
-2. Highlighting:
- - Use <strong> ONLY for these exact terms: "${safeDoctorName}", "${safeMainSpecialty}", "${qualifications}", "MB.,ChB.,(1985)", "MMed(O/G).,(1992)", "Maternal and Child Health", "Reproductive Health", "NHIF", "maternity", "Caesarean", "Obstetrics", "pregnancy", "delivery", "contraception", "menopause", "prenatal care", "family planning", "cervical screening".
- - Bold each listed term at least once where appropriate in the content.
- - Absolutely no bolding of unlisted terms, including "Gynaecology", "health", "care", "services", or any other generics not specified above.
- - Limit <strong> application to 4-5 times max per term across all sections (e.g., bold "${safeDoctorName}" exactly 5 times, no more).
+Writing Style Rules
+All content MUST be written in 3rd person (e.g., “The clinic provides…”, “It is recognized for…”).
+NEVER use “we”, “our”, “us”, “you”.
+The article must directly answer queries in 3rd person.
+Each section must open with a unique contextual statement instead of repeating the search query.
+Tone: neutral, factual, descriptive — like an independent medical reference.
 
-Introduction:
-- Start with: <p>
-- Write an engaging, ~140-word summary of <strong>${safeDoctorName}</strong>.
-- Use only data: qualifications, specialty, subspecialties (Don't include this if specialty is same as subspecialties and don't repeat speciality keywords twice or thrice) , location (use location as "Kenya" if "Not specified" or N/A), "About".
-- Focus on expertise and unique benefits (e.g., NHIF-covered maternity care).
-- Keep natural and conversational.
-- End with: </p>
+Keyword Frequency, Highlighting & Linking
+Limit each key term ("${clinicMainSpecialty}", "NHIF") to 4–5 uses max.
+Use <strong> ONLY for: "${safeClinicName}", "${clinicMainSpecialty}", "NHIF", "maternity", "Caesarean", "Obstetrics", "pregnancy", "delivery", "contraception", "menopause", "prenatal care", "family planning", "cervical screening", "Maternal and Child Health", "Reproductive Health".
+Do NOT bold unlisted terms.
+Limit <strong> usage to 4–5 times per term.
 
-Qualifications and Expertise:
-- Start with: <h2>Qualifications and Expertise</h2>
-- IMPORTANT: You MUST use HTML bullet list format with <ul> and <li> tags for 8-10 concise bullet pints (~140 words total).:
-<ul>
-  <li>First qualification point</li>
-  <li>Second qualification point</li>
-  ...and so on
-</ul>
-- Base on "${qualifications}" and specialties/"About" (don't repeat same speciality keywords twice or thrice).
-- Highlight per rules; no invented details; use "degree" singular for MB.,ChB.
+Hyperlinking Rules:
+“clinic software features” → https://www.easyclinic.io/features/
+“EasyClinic” → https://www.easyclinic.io/
+Each link must be used once only.
 
-Services Section:
-- Start with: ${servicesHeader}
-- IMPORTANT: You MUST use HTML bullet list format with <ul> and <li> tags for 8-10 concise bullets (~140 words total).:
-<ul>
-  <li>First service point</li>
-  <li>Second service point</li>
-  ...and so on
-</ul>
-- Derive from "${safeMainSpecialty}", "${subSpecialties || safeMainSpecialty} (Don't include this if specialty is same as subspecialties and don't repeat speciality keywords twice or thrice)", "About".
-- Allow logical extensions (e.g., "Reproductive Health" includes contraception) tied to data.
-- Highlight per rules.
+Integration of Generic Queries (with Direct 3rd Person Answers)
+Intro (~140 words): Establish authority and trust, showing why <strong>${safeClinicName}</strong> is considered among the best in ${clinicLocation}. Directly cover “Which is the best clinic near me?” and “Where can I find a trusted clinic in ${clinicLocation}?” as facts. Include hyperlink to EasyClinic.
 
-Booking Information:
-- Start with: ${bookingHeader}
-- Write 2 concise, engaging sentences in a single <p> tag (~60 words with contact line).
-- Highlight <strong>${safeMainSpecialty}</strong> expertise and benefits; no extra details.
-- Use natural tone; no repetition.
-- End with: ${contactSection}
-`
+Expertise (~140 words): Explain staff expertise, facilities, and reliability. Directly cover: “What clinic offers affordable treatment in ${clinicMainSpecialty}?” as a fact. Include hyperlink to clinic software features.
+
+Services (~140 words): Describe treatments linked to specialties. Directly cover: “Clinics offering <strong>${clinicMainSpecialty}</strong> in ${clinicLocation}”.
+
+Booking (~80 words): Summarize convenience and access. Directly cover: “Best private clinic near me”. End with ${contactSection}.
+
+Section Breakdown
+Introduction (~140 words)
+<p>Open with a strong contextual statement about ${safeClinicName} in ${clinicLocation}, establishing why it is trusted and considered among the best. Include EasyClinic link.</p>
+
+Expertise (~140 words)
+<h2>Expertise and Facilities</h2><ul><li>Bullet points on staff, facilities, technology</li><li>One bullet must state affordability in ${clinicMainSpecialty}</li></ul>
+
+Services (~140 words)
+${servicesHeader}<ul><li>Bullet points describing treatments</li><li>One bullet must position ${safeClinicName} as the answer for clinics offering ${clinicMainSpecialty} in ${clinicLocation}</li></ul>
+
+Booking (~80 words)
+${bookingHeader}<p>Concise summary of why ${safeClinicName} qualifies as the best private clinic near me. End with ${contactSection}.</p>`
 
     const model = genAI.getGenerativeModel({
       model: "gemini-2.0-flash",
-      generationConfig: {
-        temperature: 0.1,
-        topK: 40,
-        topP: 0.8,
-        maxOutputTokens: 2048,
-      },
+      generationConfig: { temperature: 0.1, maxOutputTokens: 2048 },
     })
 
     const result = await model.generateContent(prompt)
     const response = await result.response
     let text = response.text()
 
-    text = text
-      .replace(/```html/g, "")
-      .replace(/```/g, "")
-      .replace(/^\s*{\s*"content":\s*"/, "")
-      .replace(/"\s*}\s*$/, "")
-      .trim()
-
-    const keywords = extractKeywords(internalUrls)
-    text = linkKeywords(text, keywords)
+    text = text.replace(/```html|```/g, "").trim()
     text = enforceBoldCaps(text, selectedData)
 
+    // Word count validation
     const wordCountValidation = text.split(/\s+/).length
     if (Math.abs(wordCountValidation - wordCount) > wordCount * 0.1) {
-      const retryPrompt = `
-      ${prompt}
-
-      CRITICAL: The previous attempt did not meet the exact word count requirement.
-      Current word count: ${wordCountValidation}
-      Required word count: ${wordCount}
-      
-      Please regenerate the content with EXACTLY ${wordCount} words.
-      Maintain the same structure, formatting, and highlighting rules.
-      Ensure <strong> is applied ONLY to listed keywords and capped at 4-5 times per term.
-      REMEMBER: You MUST use <ul> and <li> tags for lists, NOT paragraphs <p> tags.
-    `
+      const retryPrompt = `${prompt}\nCRITICAL: Ensure EXACTLY ${wordCount} words.`
       const retryResult = await model.generateContent(retryPrompt)
       const retryResponse = await retryResult.response
-      text = retryResponse
-        .text()
-        .replace(/```html/g, "")
-        .replace(/```/g, "")
-        .replace(/^\s*{\s*"content":\s*"/, "")
-        .replace(/"\s*}\s*$/, "")
-        .trim()
-      text = linkKeywords(text, keywords)
+      text = retryResponse.text().replace(/```html|```/g, "").trim()
       text = enforceBoldCaps(text, selectedData)
     }
 
-    text = text
-      .replace(/<\/h2>/g, "</h2>\n")
-      .replace(/<\/p>/g, "</p>\n")
-      .trim()
-
-    // Generate the additional fields with proper null checks
+    // Metadata
     const metaTitle = generateMetaTitle(selectedData)
     const metaDescription = generateMetaDescription(selectedData)
     const slug = generateSlug(selectedData)
+    const focusKeyword = `${clinicMainSpecialty} in ${clinicLocation}`
+    const gmapSearchText = generateGmapSearchText(selectedData)
 
-    // For focus keyword, we'll use Gemini to generate a more targeted keyword
-    const focusKeywordPrompt = `
-Based on the following doctor information, provide a focused SEO keyword phrase (2-3 words) that would be most valuable for search engine optimization. The keyword should be specific to the doctor's main specialty and practice.
-
-Doctor Data:
-- Name: ${doctorName}
-- Main Specialty: ${mainSpecialty}
-- Subspecialties: ${subSpecialties}
-- Location: ${location}
-
-IMPORTANT RULES:
-1. Return ONLY the keyword phrase (2-3 words), with no additional text or explanation.
-2. The phrase should be natural and commonly searched, like "pediatric cardiology" or "orthopedic surgeon Kenya".
-3. Do NOT repeat the same word multiple times in the phrase.
-4. NEVER use abbreviations (e.g., use "General Practitioner" instead of "GP").
-5. Always use full, complete terms without shortening.
-`
-
-    const keywordResult = await model.generateContent(focusKeywordPrompt)
-    const keywordResponse = await keywordResult.response
-    const focusKeyword = keywordResponse.text().trim()
-
-    return Response.json({
-      content: text,
-      metaTitle,
-      metaDescription,
-      slug,
-      focusKeyword,
+    return Response.json({ 
+      content: text, 
+      metaTitle, 
+      metaDescription, 
+      slug, 
+      focusKeyword, 
+      gmapSearchText 
     })
   } catch (error: unknown) {
     console.error("Detailed error:", error)
-
-    const errorMessage = error instanceof Error ? error.message : String(error)
-
-    // Enhanced rate limit detection
-    if (
-      errorMessage.toLowerCase().includes("rate limit") ||
-      errorMessage.includes("429") ||
-      errorMessage.includes("too many requests")
-    ) {
-      return Response.json(
-        {
-          error: "Rate limit exceeded",
-          details: "Please wait a moment before trying again.",
-          retryAfter: 60,
-          isRateLimit: true,
-        },
-        {
-          status: 429,
-          headers: {
-            "Retry-After": "60",
-          },
-        },
-      )
-    }
-
-    return Response.json(
-      {
-        error: "Failed to generate content",
-        details: errorMessage,
-      },
-      { status: 500 },
-    )
+    return Response.json({ error: "Failed to generate content", details: String(error) }, { status: 500 })
   }
 }

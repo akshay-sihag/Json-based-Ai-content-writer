@@ -17,7 +17,7 @@ import type { DoctorData } from "@/types"
 // Update the interface definition
 interface JsonData {
   headers: string[]
-  sampleData: Record<string, string>
+  sampleData: Record<string, any>
   rawData: DoctorData[]
 }
 
@@ -109,15 +109,38 @@ export default function ContentGenerator() {
   // Update the processData function
   const processData = (json: DoctorData[]) => {
     const headers = Object.keys(json[0])
+    
+    // Extract additional location fields from nested details.Location if they exist
+    const additionalHeaders: string[] = []
+    const additionalSampleData: Record<string, any> = {}
+    
+    if (json[0].details && json[0].details.Location) {
+      const locationFields = ['Latitude', 'Longitude', 'Town', 'Description', 'Nearest landmark', 'Plot number']
+      locationFields.forEach(field => {
+        if (json[0].details.Location[field] && json[0].details.Location[field] !== '-' && json[0].details.Location[field] !== '') {
+          const headerName = `location_${field.toLowerCase().replace(/\s+/g, '_')}`
+          additionalHeaders.push(headerName)
+          additionalSampleData[headerName] = json[0].details.Location[field]
+        }
+      })
+    }
+    
+    // Combine original headers with additional location headers
+    const allHeaders = [...headers, ...additionalHeaders]
+    
     const sampleData = headers.reduce(
       (acc, header) => {
-        acc[header] = json[0][header] as string
+        acc[header] = json[0][header]
         return acc
       },
-      {} as Record<string, string>,
+      {} as Record<string, any>,
     )
+    
+    // Add additional location data to sample data
+    Object.assign(sampleData, additionalSampleData)
+    
     setJsonData({
-      headers,
+      headers: allHeaders,
       sampleData,
       rawData: json,
     })
@@ -376,8 +399,47 @@ export default function ContentGenerator() {
 
   const tones = ["Professional", "Casual", "Friendly", "Formal", "Informative", "Persuasive", "Custom"]
 
-  const loadMoreEntries = () => {
-    setVisibleEntries((prev) => Math.min(prev + 10, generatedContents.length))
+  const loadMoreEntries = (amount: number = 10) => {
+    setVisibleEntries((prev) => Math.min(prev + amount, generatedContents.length))
+  }
+
+  // Manual structure action using server-side agents
+  const handleStructureManually = async (entryId: number) => {
+    if (!jsonData) return
+    const entry = jsonData.rawData[entryId]
+    const existing = generatedContents[entryId]?.content || ""
+    try {
+      const response = await fetch("/api/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          selectedData: entry,
+          selectedHeaders,
+          wordCount: Number.parseInt(characterLength) || 500,
+          moderateOnly: true,
+          existingContent: existing,
+        }),
+      })
+      if (!response.ok) throw new Error(`HTTP ${response.status}`)
+      const data = await response.json()
+      setGeneratedContents((prev) => {
+        const next = [...prev]
+        next[entryId] = {
+          id: entryId,
+          content: data.content || existing,
+          keywords: [],
+          status: "completed",
+          metaTitle: data.metaTitle || next[entryId]?.metaTitle || "",
+          metaDescription: data.metaDescription || next[entryId]?.metaDescription || "",
+          slug: data.slug || next[entryId]?.slug || "",
+          focusKeyword: data.focusKeyword || next[entryId]?.focusKeyword || "",
+        }
+        return next
+      })
+    } catch (e) {
+      console.error("Manual structure failed", e)
+      alert("Failed to structure content. Please try again.")
+    }
   }
 
   return (
@@ -413,7 +475,11 @@ export default function ContentGenerator() {
                         />
                         <div className="grid gap-1.5 leading-none">
                           <Label htmlFor={header}>{header}</Label>
-                          <p className="text-sm text-muted-foreground">Sample: {jsonData.sampleData[header]}</p>
+                          <p className="text-sm text-muted-foreground">
+                            Sample: {typeof jsonData.sampleData[header] === 'object' 
+                              ? JSON.stringify(jsonData.sampleData[header]).substring(0, 50) + '...' 
+                              : String(jsonData.sampleData[header] || 'N/A')}
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -572,14 +638,19 @@ export default function ContentGenerator() {
                           </TableCell>
                           <TableCell className="text-right">
                             {item.status === "completed" && (
-                              <ContentViewer
-                                content={item.content}
-                                title={item.metaTitle}
-                                metaTitle={item.metaTitle}
-                                metaDescription={item.metaDescription}
-                                slug={item.slug}
-                                focusKeyword={item.focusKeyword}
-                              />
+                              <div className="flex gap-2 justify-end">
+                                <ContentViewer
+                                  content={item.content}
+                                  title={item.metaTitle}
+                                  metaTitle={item.metaTitle}
+                                  metaDescription={item.metaDescription}
+                                  slug={item.slug}
+                                  focusKeyword={item.focusKeyword}
+                                />
+                                <Button variant="outline" size="sm" onClick={() => handleStructureManually(item.id)}>
+                                  Structure
+                                </Button>
+                              </div>
                             )}
                             {item.status === "failed" && (
                               <Button
@@ -599,9 +670,12 @@ export default function ContentGenerator() {
                 </div>
               </div>
               {generatedContents.length > visibleEntries && (
-                <div className="flex justify-center mt-4 mb-2">
-                  <Button variant="outline" onClick={loadMoreEntries}>
-                    Load More Results
+                <div className="flex justify-center gap-2 mt-4 mb-2">
+                  <Button variant="outline" onClick={() => loadMoreEntries(10)}>
+                    Load 10 More
+                  </Button>
+                  <Button variant="outline" onClick={() => loadMoreEntries(1000)}>
+                    Load 1000 More
                   </Button>
                 </div>
               )}
